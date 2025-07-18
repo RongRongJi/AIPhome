@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AIP PokeMMO公会墙</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        /* 首页背景及遮罩 */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('resource/background/background.jpeg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-logo {
+            width: 120px;
+            margin-bottom: 24px;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-top: 12px;
+            opacity: 0.85;
+        }
+        /* 名人堂 */
+        .hall-of-fame {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            padding: 60px 0 40px 0;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        .tab {
+            padding: 12px 32px;
+            margin: 0 8px;
+            background: #fff;
+            border-radius: 24px 24px 0 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: #3a3a3a;
+            border-bottom: 3px solid transparent;
+            transition: background 0.2s, border-bottom 0.2s;
+        }
+        .tab.active {
+            background: #1976d2;
+            color: #fff;
+            border-bottom: 3px solid #1976d2;
+        }
+        .tab-content {
+            display: none;
+            width: 80vw;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            overflow-y: visible;
+            white-space: nowrap;
+            padding-bottom: 8px;
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
+        }
+        .tab-content::-webkit-scrollbar {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .member-card {
+            display: inline-block;
+            vertical-align: top;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 24px;
+            width: 260px;
+            min-height: 220px;
+            /* max-height: 220px;  移除高度限制 */
+            box-sizing: border-box;
+            text-align: center;
+            margin-right: 32px;
+            /* 保证内容溢出时隐藏 */
+            overflow: hidden;
+        }
+        .member-card:last-child {
+            margin-right: 0;
+        }
+        .member-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 2px solid #1976d2;
+        }
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .member-join {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .member-desc {
+            font-size: 0.98rem;
+            color: #444;
+            word-break: break-all;
+            white-space: normal;
+            overflow-wrap: break-word;
+            min-height: 4.6em; /* 3行高度，假设每行1.2em */
+            max-height: 4.6em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        @media (max-width: 900px) {
+            .tab-content {
+            width: 98vw;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            }
+            .member-card {
+            width: 80vw;
+            min-width: 220px;
+            max-width: 320px;
+            min-height: 220px;
+            /* max-height: 220px; 移除高度限制 */
+            }
+        }
+        /* 照片墙 */
+        .gallery {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            padding: 60px 0 40px 0;
+        }
+        .gallery-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .gallery-photo {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .gallery-info {
+            margin-top: 16px;
+            text-align: center;
+            color: #333;
+        }
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 12px;
+        }
+        .gallery-btn {
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .gallery-btn:hover {
+            background: #125ea2;
+        }
+        /* 荣誉墙 */
+        .honor-wall {
+            background: linear-gradient(135deg, #fdf6e3 0%, #f5e6ca 100%);
+            padding: 60px 0 40px 0;
+        }
+        .honor-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .honor-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 24px 32px;
+            min-width: 220px;
+            text-align: center;
+        }
+        .honor-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #b8860b;
+        }
+        .honor-desc {
+            font-size: 0.98rem;
+            color: #444;
+        }
+        /* 活动记录 */
+        .activity-records {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            padding: 60px 0 60px 0;
+        }
+        .activity-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .activity-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+        }
+        .activity-info {
+            flex: 1 1 220px;
+        }
+        .activity-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .activity-time {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .activity-desc {
+            font-size: 0.98rem;
+            color: #444;
+        }
+        .activity-img {
+            width: 180px;
+            max-width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        @media (max-width: 900px) {
+            .tab-content.active, .honor-list, .activity-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .activity-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 首页 -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="resource/logo/logo-blue.png" alt="AIP LOGO" class="hero-logo">
+            <div class="hero-title">AIP 公会</div>
+            <div class="hero-subtitle">Anything is Possible · 一切皆有可能</div>
+        </div>
+    </section>
+
+    <!-- 名人堂 -->
+    <section class="hall-of-fame" id="hall-of-fame">
+        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#1976d2;">公会名人堂</h2>
+        <div class="tabs">
+            <div class="tab active" data-tab="leaders">历代会长</div>
+            <div class="tab" data-tab="honors">个人荣誉</div>
+            <div class="tab" data-tab="core">核心成员</div>
+        </div>
+        <div class="tab-content active" id="tab-leaders">
+            <!-- 示例数据，实际可替换 -->
+            <div class="member-card">
+                <img src="resource/leader/aipxzh.jpeg" class="member-img" alt="会长1">
+                <div class="member-name">AIPxzh（白灵）</div>
+                <div class="member-join">2018 - 2021.7</div>
+                <div class="member-desc">一代目：AIP公会PokeMMO分部创始人，主打PVP</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/shxu.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">SHXU（姝栩）</div>
+                <div class="member-join">2021.7 - 2021.7</div>
+                <div class="member-desc">代理会长：白灵不在期间，担任公会代理会长</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/aipxzh.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">AIPxzh（白灵）</div>
+                <div class="member-join">2021.7 - 2021.11</div>
+                <div class="member-desc">一代目</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/羽墨.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">羽墨</div>
+                <div class="member-join">2021.11 - 2022.1</div>
+                <div class="member-desc">AIP和樱落公会联动，双方进行了短期的互换会长活动</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/hyqio.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">hyqio</div>
+                <div class="member-join">2022.1 - 2022.3</div>
+                <div class="member-desc">二代目：主打PVE</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/Plzzz.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">Plzzz（小皮）</div>
+                <div class="member-join">2022.3 - 2022.5</div>
+                <div class="member-desc">三代目：主打PVE</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/hyqio.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">hyqio</div>
+                <div class="member-join">2022.5 - 2023.5</div>
+                <div class="member-desc">二代目</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/羽墨.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">羽墨</div>
+                <div class="member-join">2023.5 - 2023.7</div>
+                <div class="member-desc">代理会长：前任会长退游，临时接任公会管理。这段时间AIP和樱落共同管理。</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/rrj.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">RongRongJi（蓉蓉鸡）</div>
+                <div class="member-join">2023.7 - 2023.11</div>
+                <div class="member-desc">四代目：主PVP</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/qqq.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">qqqianx</div>
+                <div class="member-join">2023.11 - 2024.4</div>
+                <div class="member-desc">五代目：主PVP，作为OU分级榜一，吸引许多PVP玩家加入公会</div>
+            </div>
+            <div class="member-card">
+                <img src="resource/leader/rrj.jpeg" class="member-img" alt="会长2">
+                <div class="member-name">RongRongJi（蓉蓉鸡）</div>
+                <div class="member-join">2024.4 - 至今</div>
+                <div class="member-desc">四代目</div>
+            </div>
+        </div>
+        <div class="tab-content" id="tab-honors">
+            <div class="member-card">
+                <img src="/resource/members/honor1.png" class="member-img" alt="荣誉1">
+                <div class="member-name">皮卡丘</div>
+                <div class="member-join">入会时间：2020年1月</div>
+                <div class="member-desc">获得“最受欢迎成员”称号，积极参与各项活动。</div>
+            </div>
+            <div class="member-card">
+                <img src="/resource/members/honor2.png" class="member-img" alt="荣誉2">
+                <div class="member-name">qqqianx</div>
+                <div class="member-join">2023.11 - 2024.4</div>
+                <div class="member-desc">荣获“最佳新人奖”，表现突出。</div>
+            </div>
+        </div>
+        <div class="tab-content" id="tab-core">
+            <div class="member-card">
+                <img src="/resource/members/core1.png" class="member-img" alt="核心1">
+                <div class="member-name">杰尼龟</div>
+                <div class="member-join">入会时间：2018年8月</div>
+                <div class="member-desc">核心成员，负责赛事组织与策划。</div>
+            </div>
+            <div class="member-card">
+                <img src="/resource/members/core2.png" class="member-img" alt="核心2">
+                <div class="member-name">胖丁</div>
+                <div class="member-join">入会时间：2019年11月</div>
+                <div class="member-desc">公会气氛担当，活跃于各大活动现场。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 照片墙 -->
+    <section class="gallery" id="gallery">
+        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#d72660;">公会照片墙</h2>
+        <div class="gallery-container">
+            <img src="/resource/photos/photo1.jpg" class="gallery-photo" id="gallery-photo" alt="公会合影">
+            <div class="gallery-info" id="gallery-info">
+                <div>2022年5月 · 春季聚会</div>
+                <div>大家齐聚一堂，共度美好时光。</div>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-btn" id="gallery-prev">&#8592;</button>
+                <button class="gallery-btn" id="gallery-next">&#8594;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 荣誉墙 -->
+    <section class="honor-wall" id="honor-wall">
+        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#b8860b;">荣誉墙</h2>
+        <div class="honor-list">
+            <div class="honor-card">
+                <div class="honor-title">2021年度最佳公会</div>
+                <div class="honor-desc">在全国宝可梦大赛中荣获最佳公会称号。</div>
+            </div>
+            <div class="honor-card">
+                <div class="honor-title">2022春季团体赛冠军</div>
+                <div class="honor-desc">团队协作，勇夺冠军。</div>
+            </div>
+            <div class="honor-card">
+                <div class="honor-title">2023创新贡献奖</div>
+                <div class="honor-desc">积极推动宝可梦文化创新发展。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 活动记录 -->
+    <section class="activity-records" id="activity-records">
+        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#7b1fa2;">活动记录</h2>
+        <div class="activity-list">
+            <div class="activity-card">
+                <div class="activity-info">
+                    <div class="activity-title">2023夏季宝可梦对战赛</div>
+                    <div class="activity-time">2023年7月15日</div>
+                    <div class="activity-desc">公会成员积极参与，最终获得亚军。</div>
+                </div>
+                <img src="/resource/activities/activity1-result.jpg" class="activity-img" alt="活动结果">
+            </div>
+            <div class="activity-card">
+                <div class="activity-info">
+                    <div class="activity-title">2022年秋季团建</div>
+                    <div class="activity-time">2022年10月2日</div>
+                    <div class="activity-desc">户外烧烤+宝可梦主题小游戏，大家玩得很开心。</div>
+                </div>
+                <img src="/resource/activities/activity2-result.jpg" class="activity-img" alt="活动结果">
+            </div>
+            <!-- 可继续添加更多活动 -->
+        </div>
+    </section>
+
+    <script>
+        // 名人堂Tab切换
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = {
+            leaders: document.getElementById('tab-leaders'),
+            honors: document.getElementById('tab-honors'),
+            core: document.getElementById('tab-core')
+        };
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                Object.values(tabContents).forEach(tc => tc.classList.remove('active'));
+                tabContents[tab.dataset.tab].classList.add('active');
+            });
+        });
+
+        // 照片墙轮播
+        const galleryPhotos = [
+            {
+                src: '/resource/photos/photo1.jpg',
+                time: '2022年5月',
+                desc: '大家齐聚一堂，共度美好时光。'
+            },
+            {
+                src: '/resource/photos/photo2.jpg',
+                time: '2021年12月',
+                desc: '冬季聚会，温馨合影。'
+            },
+            {
+                src: '/resource/photos/photo3.jpg',
+                time: '2020年8月',
+                desc: '夏日户外活动，青春洋溢。'
+            }
+        ];
+        let galleryIndex = 0;
+        const galleryPhoto = document.getElementById('gallery-photo');
+        const galleryInfo = document.getElementById('gallery-info');
+        function updateGallery(idx) {
+            const item = galleryPhotos[idx];
+            galleryPhoto.src = item.src;
+            galleryInfo.innerHTML = `<div>${item.time} · 合影</div><div>${item.desc}</div>`;
+        }
+        document.getElementById('gallery-prev').onclick = function() {
+            galleryIndex = (galleryIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+            updateGallery(galleryIndex);
+        };
+        document.getElementById('gallery-next').onclick = function() {
+            galleryIndex = (galleryIndex + 1) % galleryPhotos.length;
+            updateGallery(galleryIndex);
+        };
+        // 自动轮播
+        setInterval(() => {
+            galleryIndex = (galleryIndex + 1) % galleryPhotos.length;
+            updateGallery(galleryIndex);
+        }, 5000);
+    </script>
+</body>
+</html>
