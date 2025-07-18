@@ -156,6 +156,23 @@
             /* max-height: 220px; 移除高度限制 */
             }
         }
+        .member-honor-list {
+                text-align: left;
+                margin: 10px 0 0 0;
+                padding-left: 20px;
+                font-size: 0.98rem;
+                color: #444;
+                line-height: 1.5;
+                max-height: none;
+                overflow: visible;
+                word-break: break-all;
+                white-space: normal;
+            }
+            .member-honor-list li {
+                margin-bottom: 2px;
+                word-break: break-all;
+                white-space: normal;
+            }
         /* 照片墙 */
         .gallery {
             background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
@@ -199,6 +216,91 @@
             background: #125ea2;
         }
         /* 荣誉墙 */
+        .honor-timeline {
+                position: relative;
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 32px 0 32px 0;
+            }
+            .honor-timeline::before {
+                content: '';
+                position: absolute;
+                left: 32px;
+                top: 0;
+                bottom: 0;
+                width: 4px;
+                background: linear-gradient(180deg,#ffe082 0%,#b8860b 100%);
+                border-radius: 2px;
+            }
+            .honor-timeline-item {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 48px;
+                position: relative;
+            }
+            .honor-timeline-dot {
+                width: 18px;
+                height: 18px;
+                background: #b8860b;
+                border: 3px solid #fffbe6;
+                border-radius: 50%;
+                position: relative;
+                left: 24px;
+                top: 8px;
+                z-index: 2;
+                box-shadow: 0 2px 8px rgba(184,134,11,0.15);
+            }
+            .honor-timeline-content {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                padding: 20px 28px;
+                margin-left: 48px;
+                min-width: 0;
+                flex: 1;
+                position: relative;
+            }
+            .honor-timeline-time {
+                font-size: 1.05rem;
+                color: #b8860b;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+            .honor-timeline-img {
+                width: 100%;
+                max-width: 320px;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                box-shadow: 0 2px 8px rgba(184,134,11,0.08);
+                display: block;
+            }
+            .honor-title {
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin-bottom: 6px;
+                color: #b8860b;
+            }
+            .honor-desc {
+                font-size: 0.98rem;
+                color: #444;
+            }
+            @media (max-width: 600px) {
+                .honor-timeline-content {
+                    padding: 14px 10px;
+                }
+                .honor-timeline-img {
+                    max-width: 98vw;
+                }
+                .honor-timeline::before {
+                    left: 12px;
+                }
+                .honor-timeline-dot {
+                    left: 4px;
+                }
+                .honor-timeline-item {
+                    margin-bottom: 32px;
+                }
+            }
         .honor-wall {
             background: linear-gradient(135deg, #fdf6e3 0%, #f5e6ca 100%);
             padding: 60px 0 40px 0;
@@ -376,30 +478,37 @@
         </div>
         <div class="tab-content" id="tab-honors">
             <div class="member-card">
-                <img src="/resource/members/honor1.png" class="member-img" alt="荣誉1">
-                <div class="member-name">皮卡丘</div>
-                <div class="member-join">入会时间：2020年1月</div>
-                <div class="member-desc">获得“最受欢迎成员”称号，积极参与各项活动。</div>
+            <img src="resource/leader/qqq.jpeg" class="member-img" alt="荣誉1">
+            <div class="member-name">qqqianx</div>
+            <div class="member-join">3q学姐</div>
+            <ul class="member-honor-list">
+                <li>24年PSL常规赛OU分级MVP</li>
+                <li>13赛季OU西部季后赛冠军</li>
+                <!-- 更多荣誉可继续添加 -->
+            </ul>
             </div>
             <div class="member-card">
-                <img src="/resource/members/honor2.png" class="member-img" alt="荣誉2">
-                <div class="member-name">qqqianx</div>
-                <div class="member-join">2023.11 - 2024.4</div>
-                <div class="member-desc">荣获“最佳新人奖”，表现突出。</div>
+            <img src="resource/core/zhinian.jpeg" class="member-img" alt="荣誉2">
+            <div class="member-name">MiracleResurgenc</div>
+            <div class="member-join">执念无情</div>
+            <ul class="member-honor-list">
+                <li>[UU] Community Combat #406锦标赛冠军</li>
+                <!-- 更多荣誉可继续添加 -->
+            </ul>
             </div>
         </div>
         <div class="tab-content" id="tab-core">
             <div class="member-card">
-                <img src="/resource/members/core1.png" class="member-img" alt="核心1">
-                <div class="member-name">杰尼龟</div>
-                <div class="member-join">入会时间：2018年8月</div>
-                <div class="member-desc">核心成员，负责赛事组织与策划。</div>
+                <img src="resource/core/zmoyi.jpeg" class="member-img" alt="核心1">
+                <div class="member-name">ZmoYi</div>
+                <div class="member-join">入会时间：</div>
+                <div class="member-desc">巨沼怪、君主蛇稀有闪拥有者。</div>
             </div>
             <div class="member-card">
-                <img src="/resource/members/core2.png" class="member-img" alt="核心2">
-                <div class="member-name">胖丁</div>
-                <div class="member-join">入会时间：2019年11月</div>
-                <div class="member-desc">公会气氛担当，活跃于各大活动现场。</div>
+                <img src="resource/core/cbco.jpeg" class="member-img" alt="核心2">
+                <div class="member-name">Cbco</div>
+                <div class="member-join">入会时间：</div>
+                <div class="member-desc">公会LOGO、论坛公会墙制作人，活动副本攻略组，年兽头拥有者。</div>
             </div>
         </div>
     </section>
@@ -423,18 +532,33 @@
     <!-- 荣誉墙 -->
     <section class="honor-wall" id="honor-wall">
         <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#b8860b;">荣誉墙</h2>
-        <div class="honor-list">
-            <div class="honor-card">
-                <div class="honor-title">2021年度最佳公会</div>
-                <div class="honor-desc">在全国宝可梦大赛中荣获最佳公会称号。</div>
+        <div class="honor-timeline">
+            <div class="honor-timeline-item">
+                <div class="honor-timeline-dot"></div>
+                <div class="honor-timeline-content">
+                    <div class="honor-timeline-time">2021年</div>
+                    <img src="/resource/honor/honor1.jpg" alt="2021年度最佳公会" class="honor-timeline-img">
+                    <div class="honor-title">2021年度最佳公会</div>
+                    <div class="honor-desc">在全国宝可梦大赛中荣获最佳公会称号。</div>
+                </div>
             </div>
-            <div class="honor-card">
-                <div class="honor-title">2022春季团体赛冠军</div>
-                <div class="honor-desc">团队协作，勇夺冠军。</div>
+            <div class="honor-timeline-item">
+                <div class="honor-timeline-dot"></div>
+                <div class="honor-timeline-content">
+                    <div class="honor-timeline-time">2022年春季</div>
+                    <img src="/resource/honor/honor2.jpg" alt="2022春季团体赛冠军" class="honor-timeline-img">
+                    <div class="honor-title">2022春季团体赛冠军</div>
+                    <div class="honor-desc">团队协作，勇夺冠军。</div>
+                </div>
             </div>
-            <div class="honor-card">
-                <div class="honor-title">2023创新贡献奖</div>
-                <div class="honor-desc">积极推动宝可梦文化创新发展。</div>
+            <div class="honor-timeline-item">
+                <div class="honor-timeline-dot"></div>
+                <div class="honor-timeline-content">
+                    <div class="honor-timeline-time">2023年</div>
+                    <img src="/resource/honor/honor3.jpg" alt="2023创新贡献奖" class="honor-timeline-img">
+                    <div class="honor-title">2023创新贡献奖</div>
+                    <div class="honor-desc">积极推动宝可梦文化创新发展。</div>
+                </div>
             </div>
         </div>
     </section>
