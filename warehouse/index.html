@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>宝可梦精灵租借中心 / Pokémon Rental Center</title>
+    <title>AIP 宝可梦精灵租借中心 / Pokémon Rental Center</title>
     <style>
         :root{
             --bg:#f6f8fa; --card:#fff; --muted:#6b7280;
@@ -19,6 +19,9 @@
         button.active{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,165,233,0.12)}
         input.search{background:var(--card);border:1px solid #e6e9ef;padding:8px 12px;border-radius:8px;min-width:180px}
         .card{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
+        .stats{display:flex;gap:18px;align-items:center;font-size:14px}
+        .stats .item{color:var(--muted)}
+        .stats .value{font-weight:700;color:#111;margin-left:6px}
         table{width:100%;border-collapse:collapse;font-size:13px}
         thead th{background:#f3f5f7;text-align:left;padding:10px;border-bottom:1px solid #e6e9ef}
         tbody td{padding:10px;border-bottom:1px solid #f1f3f5;vertical-align:middle}
@@ -80,7 +83,10 @@
         </header>
 
         <!-- 新增：规则说明 TIPS（支持中英双语，由脚本切换内容） -->
-        <div id="tips" class="card" style="margin-bottom:12px"></div>
+        <div id="tips" class="card" style="margin-bottom:12px;font-size:12px"></div>
+
+        <!-- 新增：统计信息 -->
+        <div id="stats" class="card" style="margin-bottom:12px"></div>
 
         <div class="card" id="table-card">
             <table id="pokemon-table" aria-describedby="说明">
@@ -149,6 +155,12 @@
             donor: { zh: "捐献人", en: "Donor" }
         };
 
+        const statsLabels = {
+            total: { zh: "总数", en: "Total" },
+            available: { zh: "在库", en: "Available" },
+            borrowed: { zh: "已借出", en: "Borrowed" }
+        };
+
         // TIPS 文本（中英）
         const tipsText = {
             zh: '<strong>使用须知 TIPS：</strong>请在租借后一星期内归还宝可梦；请妥善保管禁止转借他人；归还后抵押物将返还；归还时请还原配置；每人最多可租借六只宝可梦',
@@ -161,6 +173,7 @@
         const btnEn = document.getElementById("btn-en");
         const searchInput = document.getElementById("search");
         const tipsEl = document.getElementById("tips");
+        const statsEl = document.getElementById("stats");
 
         btnZh.addEventListener("click", () => setLang(LANG.zh));
         btnEn.addEventListener("click", () => setLang(LANG.en));
@@ -173,6 +186,7 @@
             renderHead();
             tipsEl.innerHTML = tipsText[lang] || "";
             renderBody(getFilteredData());
+            renderStats();
         }
 
         function renderHead(){
@@ -266,6 +280,23 @@
             });
         }
 
+        function renderStats(){
+            const total = lastData.length;
+            const avail = lastData.filter(r => interpretAvailable(r.available)).length;
+            const borrowed = total - avail;
+            // 使用当前语言显示
+            const tLabel = statsLabels.total[currentLang];
+            const aLabel = statsLabels.available[currentLang];
+            const bLabel = statsLabels.borrowed[currentLang];
+            statsEl.innerHTML = `
+                <div class="stats">
+                    <div class="item">${tLabel}: <span class="value">${total}</span></div>
+                    <div class="item">${aLabel}: <span class="value">${avail}</span></div>
+                    <div class="item">${bLabel}: <span class="value">${borrowed}</span></div>
+                </div>
+            `;
+        }
+
         // Simple CSV parser supporting quoted fields with commas
         function parseCSV(text){
             const lines = text.split(/\r\n|\n/).filter(l => l.trim() !== "");
@@ -310,7 +341,8 @@
             return lastData.filter(r => {
                 const a = (r.name_cn || "").toLowerCase();
                 const b = (r.name_en || "").toLowerCase();
-                return a.includes(s) || b.includes(s);
+                const c = (r.renter || "").toLowerCase();
+                return a.includes(s) || b.includes(s) || c.includes(s);
             });
         }
 
@@ -326,6 +358,8 @@
         searchInput.addEventListener("input", debounce(() => {
             searchTerm = searchInput.value.trim();
             renderBody(getFilteredData());
+            // 可选：也可以让统计反映筛选结果，当前显示为总计
+            // 如果想让统计随筛选变化，把下面一行改为 renderStatsFiltered();
         }, 200));
 
         function loadData(){
@@ -358,15 +392,18 @@
                         if(parsed.length === 0) throw new Error("empty");
                         lastData = parsed;
                         renderBody(getFilteredData());
+                        renderStats();
                     }catch(e){
                         lastData = fallbackData;
                         renderBody(getFilteredData());
+                        renderStats();
                     }
                 })
                 .catch(err => {
                     // fallback
                     lastData = fallbackData;
                     renderBody(getFilteredData());
+                    renderStats();
                 });
         }
 

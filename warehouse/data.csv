@@ -1,4 +1,7 @@
-id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donar
+id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 1,艾路雷朵,Gallade,6V固执头目,"6iv,Adamant,Alpha",yes,,,,BOOH
 2,路卡利欧,Lucario,6v天真头目,"6iv,Naive",yes,,,,BOOH
 3,炎帝,Entei,6v固执,"6iv,Adamant",yes,,,,BOOH
+4,闪电鸟,,6v胆小,,,,,,
+,雷公,,6v胆小,,,,,,
+,勇士雄鹰,,6v天真,,,,,,
