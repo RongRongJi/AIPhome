@@ -151,8 +151,8 @@
 
         // TIPS 文本（中英）
         const tipsText = {
-            zh: '<strong>使用须知 TIPS：</strong>请在租借后按时归还宝可梦并妥善保管；禁止用于违法或伤害他人行为；归还后抵押物将返还；页面内容以 data.csv 为准。',
-            en: '<strong>Rules / TIPS:</strong> Please return rented Pokémon on time and keep them safe; do not use them for illegal or harmful activities; collateral will be returned upon return; listings are sourced from data.csv.'
+            zh: '<strong>使用须知 TIPS：</strong>请在租借后一星期内归还宝可梦；请妥善保管禁止转借他人；归还后抵押物将返还；归还时请还原配置；每人最多可租借六只宝可梦',
+            en: '<strong>Rules / TIPS:</strong> Please return the Pokémon within one week of rental. Please handle with care and do not lend to others. Deposit will be refunded upon return. Please restore original configuration when returning. Maximum of six Pokémon per person.'
         };
 
         const tableHeadEl = document.getElementById("table-head");
@@ -332,7 +332,25 @@
             fetch("data.csv", {cache: "no-cache"})
                 .then(resp => {
                     if(!resp.ok) throw new Error("no file");
-                    return resp.text();
+                    return resp.arrayBuffer();
+                })
+                .then(buffer => {
+                    // Decode as UTF-8 first and strip BOM; if replacement chars appear, try GBK (may not be supported in all browsers)
+                    let text = "";
+                    try{
+                        text = new TextDecoder("utf-8").decode(buffer);
+                    }catch(e){
+                        text = "";
+                    }
+                    if(text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+                    if(text.includes("\uFFFD") && typeof TextDecoder === "function"){
+                        try{
+                            text = new TextDecoder("gbk").decode(buffer);
+                        }catch(e){
+                            // ignore if GBK not supported
+                        }
+                    }
+                    return text;
                 })
                 .then(text => {
                     try{
