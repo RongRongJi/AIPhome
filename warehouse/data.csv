@@ -1,7 +1,101 @@
 id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
-1,艾路雷朵,Gallade,6V固执头目,"6iv,Adamant,Alpha",yes,,,,BOOH
-2,路卡利欧,Lucario,6v天真头目,"6iv,Naive",yes,,,,BOOH
-3,炎帝,Entei,6v固执,"6iv,Adamant",yes,,,,BOOH
-4,闪电鸟,,6v胆小,,,,,,
-,雷公,,6v胆小,,,,,,
-,勇士雄鹰,,6v天真,,,,,,
+1,艾路雷朵,Gallade,6V固执头目，攻击252，速度252,"6V Adamant Alpha, Attack 252, Speed 252",yes,,,,BOOH
+2,路卡利欧,Lucario,6v天真头目，攻击130，特攻128，速度252,"6V Naive Alpha, Attack 130, Special Attack 128, Speed 252",yes,,,,BOOH
+3,炎帝,Entei,6v固执，攻击252，速度252,"6V Adamant, Attack 252, Speed 252",yes,,,,BOOH
+4,闪电鸟,Zapdos,6v胆小，HP252，特防156，速度102,"6V Timid, HP 252, Special Defense 156, Speed 102",yes,,,,BOOH
+5,雷公,Raikou,6v胆小，特攻252，速度252,"6V Timid, Special Attack 252, Speed 252",yes,,,,BOOH
+6,勇士雄鹰,Braviary,6v天真，攻击252，速度252,"6V Naive, Attack 252, Speed 252",yes,,,,BOOH
+7,闪电鸟,Zapdos,6v胆小，HP222，防御4，特攻28，特防4，速度252,"6V Timid, HP 222, Defense 4, Special Attack 28, Special Defense 4, Speed 252",yes,,,,BOOH
+8,象牙猪,Mamoswine,6v爽朗头目，攻击252，速度252,"6V Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
+9,暴飞龙,Salamence,6v天真头目，攻击158，特攻100，速度252,"6V Naive Alpha, Attack 158, Special Attack 100, Speed 252",yes,,,,BOOH
+10,烈咬陆鲨,Garchomp,5v爽朗头目，攻击252，速度252,"5V Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
+11,沙奈朵,Gardevoir,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+12,火神蛾,Volcarona,5v攻击0大胆，防御252，速度252,"5V Attack 0 Bold, Defense 252, Speed 252",yes,,,,BOOH
+13,烈咬陆鲨,Garchomp,5v特攻0固执头目，攻击252，速度252,"5V Sp. Attack 0 Adamant Alpha, Attack 252, Speed 252",yes,,,,BOOH
+14,电蜘蛛,Galvantula,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+15,天蝎王,Gliscor,5v特攻0淘气头目，HP212，攻击6，防御252，速度40,"5V Sp. Attack 0 Impish Alpha, HP 212, Attack 6, Defense 252, Speed 40",yes,,,,BOOH
+16,巨钳螳螂,Scizor,5v特攻0固执，HP138，攻击252，速度120,"5V Sp. Attack 0 Adamant, HP 138, Attack 252, Speed 120",yes,,,,BOOH
+17,头巾混混,Scrafty,5v特攻0固执，攻击252，速度252,"5V Sp. Attack 0 Adamant, Attack 252, Speed 252",yes,,,,BOOH
+18,雪妖女,Froslass,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+19,乐天河童,Ludicolo,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
+20,火神蛾,Volcarona,5v攻击0胆小，特攻252，速度252,"5V Attack 0 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
+21,风妖精,Whimsicott,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
+22,水君,Suicune,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
+23,君主蛇,Serperior,5v攻击0大胆，HP252，防御148，速度110,"5V Attack 0 Bold, HP 252, Defense 148, Speed 110",yes,,,,BOOH
+24,水晶灯火灵,Chandelure,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
+25,水君,Suicune,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
+26,席多蓝恩,Heatran,5v攻击0胆小，特攻252，速度252,"5V Attack 0 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
+27,师傅鼬,Mienshao,5v特攻0爽朗，攻击252，速度252,"5V Sp. Attack 0 Jolly, Attack 252, Speed 252",yes,,,,BOOH
+28,多边兽乙型,Porygon-Z,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
+29,洛托姆（切割）,Rotom-Mow,5v攻击0胆小，特HP252，速度252,"5V Attack 0 Timid, HP 252, Speed 252",yes,,,,BOOH
+30,刺龙王,Kingdra,5v攻击0内敛头目，特攻252，速度252,"5V Attack 0 Modest Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+31,水晶灯火灵,Chandelure,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
+32,基拉祈,Jirachi,5v攻击0内敛，HP238，特攻156，速度116,"5V Attack 0 Modest, HP 238, Special Attack 156, Speed 116",yes,,,,BOOH
+33,美纳斯,Milotic,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+34,九尾,Ninetales,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+35,海兔兽,Gastrodon,5v攻击0大胆，HP252，防御252,"5V Attack 0 Bold, HP 252, Defense 252",yes,,,,BOOH
+36,班基拉斯,Tyranitar,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
+37,铁蚁,Durant,5v特攻0爽朗，攻击252，速度252,"5V Sp. Attack 0 Jolly, Attack 252, Speed 252",yes,,,,BOOH
+38,梦妖魔,Mismagius,5v攻击0胆小，特攻252，速度252,"5V Attack 0 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
+39,天蝎王,Gliscor,5v特攻0慎重，HP252，特防252,"5V Sp. Attack 0 Careful, HP 252, Special Defense 252",yes,,,,BOOH
+40,巨金怪,Metagross,5v特攻0固执，HP204，攻击180，防御102，特防12，速度12,"5V Sp. Attack 0 Adamant, HP 204, Attack 180, Defense 102, Special Defense 12, Speed 12",yes,,,,BOOH
+41,直冲熊,Obstagoon,5v特攻0爽朗头目，HP252，攻击248，特防10,"5V Sp. Attack 0 Jolly Alpha, HP 252, Attack 248, Special Defense 10",yes,,,,BOOH
+42,三首恶龙,Hydreigon,5v攻击0内敛，HP38，防御4，特攻252，特防84，速度132,"5V Attack 0 Modest, HP 38, Defense 4, Special Attack 252, Special Defense 84, Speed 132",yes,,,,BOOH
+43,暴鲤龙,Gyarados,5v特攻0爽朗头目，攻击252，速度252,"5V Sp. Attack 0 Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
+44,太阳伊布,Espeon,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+45,宝石海星,Starmie,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+46,月亮伊布,Umbreon,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
+47,班基拉斯,Tyranitar,5v特攻0爽朗头目，攻击252，速度252,"5V Sp. Attack 0 Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
+48,胖嘟嘟,Jellicent,5v攻击0温和，HP252，特防252,"5V Attack 0 Calm, HP 252, Special Defense 252",yes,,,,BOOH
+49,君主蛇,Serperior,5v攻击0胆小，HP76，防御4，特攻166，特防12，速度252,"5V Attack 0 Timid, HP 76, Defense 4, Special Attack 166, Special Defense 12, Speed 252",yes,,,,BOOH
+50,修建老匠,Conkeldurr,5v特攻0固执，HP206，攻击252，防御4，特防4，速度44,"5V Sp. Attack 0 Adamant, HP 206, Attack 252, Defense 4, Special Defense 4, Speed 44",yes,,,,BOOH
+51,沼王,Quagsire,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
+52,宝石海星,Starmie,5v攻击0大胆，HP252，防御218，特攻40,"5V Attack 0 Bold, HP 252, Defense 218, Special Attack 40",yes,,,,BOOH
+53,败露球菇,Amoonguss,5v攻击0大胆头目，HP252，防御174，特防84,"5V Attack 0 Bold Alpha, HP 252, Defense 174, Special Defense 84",yes,,,,BOOH
+54,人造细胞卵,Reuniclus,5v攻击0大胆，HP252，特攻252,"5V Attack 0 Bold, HP 252, Special Attack 252",yes,,,,BOOH
+55,地鼠,Diglett,0/31/0/31/0/31急躁，攻击252，速度252,"0/31/0/31/0/31 Hasty, Attack 252, Speed 252",yes,,,,BOOH
+56,黑暗鸦,Murkrow,4v爽朗，HP252，速度252,"4V Jolly, HP 252, Speed 252",yes,,,,BOOH
+57,吉利蛋,Chansey,31/0/31/0/31/31大胆，HP246，防御252，速度12,"31/0/31/0/31/31 Bold, HP 246, Defense 252, Speed 12",yes,,,,BOOH
+58,龙头地鼠,Excadrill,5v特攻0固执头目，攻击252，速度252,"5V Sp. Attack 0 Adamant Alpha, Attack 252, Speed 252",yes,,,,BOOH
+59,三首恶龙,Hydreigon,5v攻击0内敛，HP134，特攻252，速度124,"5V Attack 0 Modest, HP 134, Special Attack 252, Speed 124",yes,,,,BOOH
+60,刺甲贝,Cloyster,6v马虎头目，攻击252，特攻252,"6V Rash Alpha, Attack 252, Special Attack 252",yes,,,,BOOH
+61,自爆磁怪,Magnezone,5v胆小头目，攻击252，速度252,"5V Timid Alpha, Attack 252, Speed 252",yes,,,,BOOH
+62,大力鳄,Feraligatr,5v固执，攻击252，速度252,"5V Adamant, Attack 252, Speed 252",yes,,,,BOOH
+63,卡比兽,Snorlax,5v慎重，HP252，防御252,"5V Careful, HP 252, Defense 252",yes,,,,BOOH
+64,班基拉斯,Tyranitar,5v爽朗，攻击252，速度252,"5V Jolly, Attack 252, Speed 252",yes,,,,BOOH
+65,水晶灯火灵,Chandelure,5v内敛头目，特攻252，速度252,"5V Modest Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+66,烈咬陆鲨,Garchomp,5v大胆，HP108，防御12，特攻134，特防4，速度252,"5V Bold, HP 108, Defense 12, Special Attack 134, Special Defense 4, Speed 252",yes,,,,BOOH
+67,雷伊布,Jolteon,5v胆小，特攻252，速度252,"5V Timid, Special Attack 252, Speed 252",yes,,,,BOOH
+68,头巾混混,Scrafty,5v爽朗，攻击252，速度252,"5V Jolly, Attack 252, Speed 252",yes,,,,BOOH
+69,月亮伊布,Umbreon,5v大胆，HP252，防御252,"5V Bold, HP 252, Defense 252",yes,,,,BOOH
+70,大嘴鸥,Pelipper,5v大胆，HP252，防御252,"5V Bold, HP 252, Defense 252",yes,,,,BOOH
+71,胖嘟嘟,Jellicent,31/0/31/30/31/31胆小，HP10，防御252，速度248,"31/0/31/30/31/31 Timid, HP 10, Defense 252, Speed 248",yes,,,,BOOH
+72,修建老匠,Conkeldurr,31/31/31/x/31/0勇敢，HP252，攻击252,"31/31/31/x/31/0 Brave, HP 252, Attack 252",yes,,,,BOOH
+73,败露球菇,Amoonguss,31/x/31/31/31/0自大，HP252，防御146，特防112,"31/x/31/31/31/0 Sassy, HP 252, Defense 146, Special Defense 112",yes,,,,BOOH
+74,坚果哑铃,Ferrothorn,31/31/31/x/31/0悠闲，HP252，防御252,"31/31/31/x/31/0 Relaxed, HP 252, Defense 252",yes,,,,BOOH
+75,烈咬陆鲨,Garchomp,30/31/30/31/30/31天真，攻击252，速度252,"30/31/30/31/30/31 Naive, Attack 252, Speed 252",yes,,,,BOOH
+76,脱壳忍者,Shedinja,怕寂寞，攻击252，特攻252,"Lonely, Attack 252, Special Attack 252",yes,,,,BOOH
+77,脱壳忍者,Shedinja,怕寂寞，攻击252，速度252,"Lonely, Attack 252, Speed 252",yes,,,,BOOH
+78,脱壳忍者,Shedinja,怕寂寞，攻击252，特攻252,"Lonely, Attack 252, Special Attack 252",yes,,,,BOOH
+79,佛烈托斯,Forretress,31/30/31/31/31/x悠闲头目，HP252，防御252,"31/30/31/x/29/29 Relaxed Alpha, HP 252, Defense 252",yes,,,,BOOH
+80,战舞郎,Hitmontop,30/31/31/0/31/31固执，HP174，攻击252，速度84,"30/31/31/0/31/31 Adamant, HP 174, Attack 252, Speed 84",yes,,,,BOOH
+81,水箭龟,Blastoise,31/0/30/31/31/31温和，HP252，防御12，特攻6，特防204，速度36,"31/0/30/31/31/31 Calm, HP 252, Defense 12, Special Attack 6, Special Defense 204, Speed 36",yes,,,,BOOH
+82,煤炭龟,Torkoal,31/x/31/31/31/0冷静，HP252，特攻252,"31/x/31/31/31/0 Quiet, HP 252, Special Attack 252",yes,,,,BOOH
+83,尼多王,Nidoking,31/x/30/31/30/31胆小头目，攻击252，速度252,"31/x/30/31/30/31 Timid Alpha, Attack 252, Speed 252",yes,,,,BOOH
+84,象牙猪,Mamoswine,31/31/30/x/30/31固执，攻击252，速度252,"31/31/30/x/30/31 Adamant, Attack 252, Speed 252",yes,,,,BOOH
+85,胖嘟嘟,Jellicent,31/x/31/30/30/31大胆，HP252，防御100，速度158,"31/x/31/30/30/31 Bold, HP 252, Defense 100, Speed 158",yes,,,,BOOH
+86,流氓鳄,Krookodile,30/31/30/x/31/31爽朗，攻击252，速度252,"30/31/30/x/31/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
+87,斗笠菇,Breloom,30/31/31/x/30/31爽朗，攻击252，速度252,"30/31/31/x/30/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
+88,沙漠蜻蜓,Flygon,31/31/30/x/30/31固执，HP214，攻击252，速度44,"31/31/30/x/30/31 Adamant, HP 214, Attack 252, Speed 44",yes,,,,BOOH
+89,龙头地鼠,Excadrill,31/31/30/x/30/31爽朗，攻击252，速度252,"31/31/30/x/30/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
+90,幸福蛋,Blissey,31/x/31/29/31/30淘气，HP252，防御252,"31/x/31/29/31/30 Impish, HP 252, Defense 252",yes,,,,BOOH
+91,呆壳兽,Slowbro,31/x/31/30/31/30大胆，HP252，防御252,"31/x/31/30/31/30 Bold, HP 252, Defense 252",yes,,,,BOOH
+92,劈斩司令,Bisharp,30/31/29/x/31/31固执，攻击252，速度252,"30/31/29/x/31/31 Adamant, Attack 252, Speed 252",yes,,,,BOOH
+93,波克基斯,Togekiss,31/x/30/31/30/31胆小，特攻252，速度252,"31/x/30/31/30/31 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
+94,象征鸟,Sigilyph,31/x/30/31/30/31胆小，特攻252，速度252,"31/x/30/31/30/31 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
+95,彷徨夜灵,Dusclops,31/x/31/x/31/0自大，HP252，特防252,"31/x/31/x/31/0 Sassy, HP 252, Special Defense 252",yes,,,,BOOH
+96,勾魂眼,Sableye,31/x/31/x/30/x淘气，HP252，防御252,"31/x/31/x/30/x Impish, HP 252, Defense 252",yes,,,,BOOH
+97,河马兽,Hippowdon,31/30/31/x/29/29淘气，HP252，防御252,"31/30/31/x/29/29 Impish, HP 252, Defense 252",yes,,,,BOOH
+98,叉字蝠,Crobat,30/31/30/x/30/31爽朗，攻击252，速度252,"30/31/30/x/30/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
+99,怪力,Machamp,31/31/30/x/29/30固执，HP252，攻击252,"31/31/30/x/29/30 Adamant, HP 252, Attack 252",yes,,,,BOOH
+100,双斧战龙,Haxorus,30/31/30/x/30/31固执，攻击252，速度252,"30/31/30/x/30/31 Adamant, Attack 252, Speed 252",yes,,,,BOOH
