@@ -13,7 +13,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 12,火神蛾,Volcarona,5v攻击0大胆，防御252，速度252,"5V Attack 0 Bold, Defense 252, Speed 252",yes,,,,BOOH
 13,烈咬陆鲨,Garchomp,5v特攻0固执头目，攻击252，速度252,"5V Sp. Attack 0 Adamant Alpha, Attack 252, Speed 252",yes,,,,BOOH
 14,电蜘蛛,Galvantula,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
-15,天蝎王,Gliscor,5v特攻0淘气头目，HP212，攻击6，防御252，速度40,"5V Sp. Attack 0 Impish Alpha, HP 212, Attack 6, Defense 252, Speed 40",yes,,,,BOOH
+15,天蝎王,Gliscor,5v特攻0淘气头目，HP212，攻击6，防御252，速度40,"5V Sp. Attack 0 Impish Alpha, HP 212, Attack 6, Defense 252, Speed 40",yes,NFZ,2025/11/28,,BOOH
 16,巨钳螳螂,Scizor,5v特攻0固执，HP138，攻击252，速度120,"5V Sp. Attack 0 Adamant, HP 138, Attack 252, Speed 120",yes,,,,BOOH
 17,头巾混混,Scrafty,5v特攻0固执，攻击252，速度252,"5V Sp. Attack 0 Adamant, Attack 252, Speed 252",yes,,,,BOOH
 18,雪妖女,Froslass,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
@@ -44,7 +44,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 43,暴鲤龙,Gyarados,5v特攻0爽朗头目，攻击252，速度252,"5V Sp. Attack 0 Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
 44,太阳伊布,Espeon,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
 45,宝石海星,Starmie,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
-46,月亮伊布,Umbreon,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
+46,月亮伊布,Umbreon,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,NFZ,2025/11/28,,BOOH
 47,班基拉斯,Tyranitar,5v特攻0爽朗头目，攻击252，速度252,"5V Sp. Attack 0 Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
 48,胖嘟嘟,Jellicent,5v攻击0温和，HP252，特防252,"5V Attack 0 Calm, HP 252, Special Defense 252",yes,,,,BOOH
 49,君主蛇,Serperior,5v攻击0胆小，HP76，防御4，特攻166，特防12，速度252,"5V Attack 0 Timid, HP 76, Defense 4, Special Attack 166, Special Defense 12, Speed 252",yes,,,,BOOH
@@ -53,7 +53,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 52,宝石海星,Starmie,5v攻击0大胆，HP252，防御218，特攻40,"5V Attack 0 Bold, HP 252, Defense 218, Special Attack 40",yes,,,,BOOH
 53,败露球菇,Amoonguss,5v攻击0大胆头目，HP252，防御174，特防84,"5V Attack 0 Bold Alpha, HP 252, Defense 174, Special Defense 84",yes,,,,BOOH
 54,人造细胞卵,Reuniclus,5v攻击0大胆，HP252，特攻252,"5V Attack 0 Bold, HP 252, Special Attack 252",yes,,,,BOOH
-55,地鼠,Diglett,0/31/0/31/0/31急躁，攻击252，速度252,"0/31/0/31/0/31 Hasty, Attack 252, Speed 252",yes,,,,BOOH
+55,地鼠,Diglett,0/31/0/31/0/31急躁，攻击252，速度252,"0/31/0/31/0/31 Hasty, Attack 252, Speed 252",yes,NFZ,2025/11/28,,BOOH
 56,黑暗鸦,Murkrow,4v爽朗，HP252，速度252,"4V Jolly, HP 252, Speed 252",yes,,,,BOOH
 57,吉利蛋,Chansey,31/0/31/0/31/31大胆，HP246，防御252，速度12,"31/0/31/0/31/31 Bold, HP 246, Defense 252, Speed 12",yes,,,,BOOH
 58,龙头地鼠,Excadrill,5v特攻0固执头目，攻击252，速度252,"5V Sp. Attack 0 Adamant Alpha, Attack 252, Speed 252",yes,,,,BOOH
@@ -75,7 +75,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 74,坚果哑铃,Ferrothorn,31/31/31/x/31/0悠闲，HP252，防御252,"31/31/31/x/31/0 Relaxed, HP 252, Defense 252",yes,,,,BOOH
 75,烈咬陆鲨,Garchomp,30/31/30/31/30/31天真，攻击252，速度252,"30/31/30/31/30/31 Naive, Attack 252, Speed 252",yes,,,,BOOH
 76,脱壳忍者,Shedinja,怕寂寞，攻击252，特攻252,"Lonely, Attack 252, Special Attack 252",yes,,,,BOOH
-77,脱壳忍者,Shedinja,怕寂寞，攻击252，速度252,"Lonely, Attack 252, Speed 252",yes,,,,BOOH
+77,脱壳忍者,Shedinja,怕寂寞，攻击252，速度252,"Lonely, Attack 252, Speed 252",yes,NFZ,2025/11/28,,BOOH
 78,脱壳忍者,Shedinja,怕寂寞，攻击252，特攻252,"Lonely, Attack 252, Special Attack 252",yes,,,,BOOH
 79,佛烈托斯,Forretress,31/30/31/31/31/x悠闲头目，HP252，防御252,"31/30/31/x/29/29 Relaxed Alpha, HP 252, Defense 252",yes,,,,BOOH
 80,战舞郎,Hitmontop,30/31/31/0/31/31固执，HP174，攻击252，速度84,"30/31/31/0/31/31 Adamant, HP 174, Attack 252, Speed 84",yes,,,,BOOH
