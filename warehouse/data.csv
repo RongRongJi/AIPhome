@@ -20,7 +20,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 19,乐天河童,Ludicolo,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
 20,火神蛾,Volcarona,5v攻击0胆小，特攻252，速度252,"5V Attack 0 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
 21,风妖精,Whimsicott,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
-22,水君,Suicune,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
+22,水君,Suicune,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",no,Lyan,2025/11/30,头目双尾怪手,BOOH
 23,君主蛇,Serperior,5v攻击0大胆，HP252，防御148，速度110,"5V Attack 0 Bold, HP 252, Defense 148, Speed 110",yes,,,,BOOH
 24,水晶灯火灵,Chandelure,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
 25,水君,Suicune,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
