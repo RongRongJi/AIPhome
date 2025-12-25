@@ -27,7 +27,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 26,席多蓝恩,Heatran,5v攻击0胆小，特攻252，速度252,"5V Attack 0 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
 27,师傅鼬,Mienshao,5v特攻0爽朗，攻击252，速度252,"5V Sp. Attack 0 Jolly, Attack 252, Speed 252",yes,,,,BOOH
 28,多边兽乙型,Porygon-Z,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
-29,洛托姆（切割）,Rotom-Mow,5v攻击0胆小，特HP252，速度252,"5V Attack 0 Timid, HP 252, Speed 252",yes,,,,BOOH
+29,洛托姆（切割）,Rotom-Mow,5v攻击0胆小，特HP252，速度252,"5V Attack 0 Timid, HP 252, Speed 252",no,Muice,2025/12/23,太阳伊布,BOOH
 30,刺龙王,Kingdra,5v攻击0内敛头目，特攻252，速度252,"5V Attack 0 Modest Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
 31,水晶灯火灵,Chandelure,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
 32,基拉祈,Jirachi,5v攻击0内敛，HP238，特攻156，速度116,"5V Attack 0 Modest, HP 238, Special Attack 156, Speed 116",yes,,,,BOOH
@@ -38,7 +38,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 37,铁蚁,Durant,5v特攻0爽朗，攻击252，速度252,"5V Sp. Attack 0 Jolly, Attack 252, Speed 252",yes,,,,BOOH
 38,梦妖魔,Mismagius,5v攻击0胆小，特攻252，速度252,"5V Attack 0 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
 39,天蝎王,Gliscor,5v特攻0慎重，HP252，特防252,"5V Sp. Attack 0 Careful, HP 252, Special Defense 252",yes,,,,BOOH
-40,巨金怪,Metagross,5v特攻0固执，HP204，攻击180，防御102，特防12，速度12,"5V Sp. Attack 0 Adamant, HP 204, Attack 180, Defense 102, Special Defense 12, Speed 12",yes,,,,BOOH
+40,巨金怪,Metagross,5v特攻0固执，HP204，攻击180，防御102，特防12，速度12,"5V Sp. Attack 0 Adamant, HP 204, Attack 180, Defense 102, Special Defense 12, Speed 12",no,Muice,2025/12/23,巨钳螳螂,BOOH
 41,直冲熊,Obstagoon,5v特攻0爽朗头目，HP252，攻击248，特防10,"5V Sp. Attack 0 Jolly Alpha, HP 252, Attack 248, Special Defense 10",yes,,,,BOOH
 42,三首恶龙,Hydreigon,5v攻击0内敛，HP38，防御4，特攻252，特防84，速度132,"5V Attack 0 Modest, HP 38, Defense 4, Special Attack 252, Special Defense 84, Speed 132",yes,,,,BOOH
 43,暴鲤龙,Gyarados,5v特攻0爽朗头目，攻击252，速度252,"5V Sp. Attack 0 Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
@@ -96,7 +96,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 95,彷徨夜灵,Dusclops,31/x/31/x/31/0自大，HP252，特防252,"31/x/31/x/31/0 Sassy, HP 252, Special Defense 252",yes,,,,BOOH
 96,勾魂眼,Sableye,31/x/31/x/30/x淘气，HP252，防御252,"31/x/31/x/30/x Impish, HP 252, Defense 252",yes,,,,BOOH
 97,河马兽,Hippowdon,31/30/31/x/29/29淘气，HP252，防御252,"31/30/31/x/29/29 Impish, HP 252, Defense 252",yes,,,,BOOH
-98,叉字蝠,Crobat,30/31/30/x/30/31爽朗，攻击252，速度252,"30/31/30/x/30/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
+98,叉字蝠,Crobat,30/31/30/x/30/31爽朗，攻击252，速度252,"30/31/30/x/30/31 Jolly, Attack 252, Speed 252",no,Muice,2025/12/23,谢米,BOOH
 99,怪力,Machamp,31/31/30/x/29/30固执，HP252，攻击252,"31/31/30/x/29/30 Adamant, HP 252, Attack 252",yes,,,,BOOH
 100,双斧战龙,Haxorus,30/31/30/x/30/31固执，攻击252，速度252,"30/31/30/x/30/31 Adamant, Attack 252, Speed 252",yes,,,,BOOH
 101,快龙,Dragonite,5v固执头目，攻击252，速度252,"5V Adamant, Attack 252, Speed 252",yes,,,,BartekDolar
