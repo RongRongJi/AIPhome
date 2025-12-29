@@ -73,7 +73,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 72,修建老匠,Conkeldurr,31/31/31/x/31/0勇敢，HP252，攻击252,"31/31/31/x/31/0 Brave, HP 252, Attack 252",yes,,,,BOOH
 73,败露球菇,Amoonguss,31/x/31/31/31/0自大，HP252，防御146，特防112,"31/x/31/31/31/0 Sassy, HP 252, Defense 146, Special Defense 112",yes,,,,BOOH
 74,坚果哑铃,Ferrothorn,31/31/31/x/31/0悠闲，HP252，防御252,"31/31/31/x/31/0 Relaxed, HP 252, Defense 252",yes,,,,BOOH
-75,烈咬陆鲨,Garchomp,30/31/30/31/30/31天真，特攻252，速度252,"30/31/30/31/30/31 Naive, SpA 252, Speed 252",no,NFZ,2025/12/10,,BOOH
+75,烈咬陆鲨,Garchomp,30/31/30/31/30/31天真，特攻252，速度252,"30/31/30/31/30/31 Naive, SpA 252, Speed 252",yes,,,,BOOH
 76,脱壳忍者,Shedinja,怕寂寞，攻击252，特攻252,"Lonely, Attack 252, Special Attack 252",yes,,,,BOOH
 77,脱壳忍者,Shedinja,怕寂寞，攻击252，速度252,"Lonely, Attack 252, Speed 252",yes,,,,BOOH
 78,脱壳忍者,Shedinja,怕寂寞，攻击252，特攻252,"Lonely, Attack 252, Special Attack 252",yes,,,,BOOH
