@@ -16,11 +16,11 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 15,天蝎王,Gliscor,5v特攻0淘气头目，HP212，攻击6，防御252，速度40,"5V Sp. Attack 0 Impish Alpha, HP 212, Attack 6, Defense 252, Speed 40",yes,,,,BOOH
 16,巨钳螳螂,Scizor,5v特攻0固执，HP138，攻击252，速度120,"5V Sp. Attack 0 Adamant, HP 138, Attack 252, Speed 120",yes,,,,BOOH
 17,头巾混混,Scrafty,5v特攻0固执，攻击252，速度252,"5V Sp. Attack 0 Adamant, Attack 252, Speed 252",yes,,,,BOOH
-18,雪妖女,Froslass,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+18,雪妖女,Froslass,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",no,SKYaspera,2026/2/15,烈咬陆鲨,BOOH
 19,乐天河童,Ludicolo,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
 20,火神蛾,Volcarona,5v攻击0胆小，特攻252，速度252,"5V Attack 0 Timid, Special Attack 252, Speed 252",yes,,,,BOOH
 21,风妖精,Whimsicott,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
-22,水君,Suicune,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",no,Lyan,2025/11/30,头目双尾怪手,BOOH
+22,水君,Suicune,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
 23,君主蛇,Serperior,5v攻击0大胆，HP252，防御148，速度110,"5V Attack 0 Bold, HP 252, Defense 148, Speed 110",yes,,,,BOOH
 24,水晶灯火灵,Chandelure,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
 25,水君,Suicune,5v攻击0内敛，特攻252，速度252,"5V Attack 0 Modest, Special Attack 252, Speed 252",yes,,,,BOOH
