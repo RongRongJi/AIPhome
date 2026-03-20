@@ -87,7 +87,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 86,流氓鳄,Krookodile,30/31/30/x/31/31爽朗，攻击252，速度252,"30/31/30/x/31/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
 87,斗笠菇,Breloom,30/31/31/x/30/31爽朗，攻击252，速度252,"30/31/31/x/30/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
 88,沙漠蜻蜓,Flygon,31/31/30/x/30/31固执，HP214，攻击252，速度44,"31/31/30/x/30/31 Adamant, HP 214, Attack 252, Speed 44",yes,,,,BOOH
-89,龙头地鼠,Excadrill,31/31/30/x/30/31爽朗，攻击252，速度252,"31/31/30/x/30/31 Jolly, Attack 252, Speed 252",yes,BOOH,2026/3/7,,BOOH
+89,龙头地鼠,Excadrill,31/31/30/x/30/31爽朗，攻击252，速度252,"31/31/30/x/30/31 Jolly, Attack 252, Speed 252",yes,,,,BOOH
 90,幸福蛋,Blissey,31/x/31/29/31/30淘气，HP252，防御252,"31/x/31/29/31/30 Impish, HP 252, Defense 252",yes,,,,BOOH
 91,呆壳兽,Slowbro,31/x/31/30/31/30大胆，HP252，防御252,"31/x/31/30/31/30 Bold, HP 252, Defense 252",yes,,,,BOOH
 92,劈斩司令,Bisharp,30/31/29/x/31/31固执，攻击252，速度252,"30/31/29/x/31/31 Adamant, Attack 252, Speed 252",yes,,,,BOOH
@@ -100,3 +100,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 99,怪力,Machamp,31/31/30/x/29/30固执，HP252，攻击252,"31/31/30/x/29/30 Adamant, HP 252, Attack 252",yes,,,,BOOH
 100,双斧战龙,Haxorus,30/31/30/x/30/31固执，攻击252，速度252,"30/31/30/x/30/31 Adamant, Attack 252, Speed 252",yes,,,,BOOH
 101,快龙,Dragonite,5v固执头目，攻击252，速度252,"5V Adamant, Attack 252, Speed 252",yes,,,,BartekDolar
+102,毒刺水母,Tentacruel,5v温和，HP252，特防198，速度60,"5V Calm,HP252 SpD198 Spe60  ",yes,,,,PuddleMudd
+103,风速狗,Arcanine,5v爽朗头目，攻击252，速度252,"5V Jolly Alpha, Attack 252, Speed 252",yes,,,,PuddleMudd
+104,斗笠菇,Breloom,5v固执头目，攻击252，速度252,"5V Adamant, Attack 252, Speed 252",yes,,,,BOOH
+105,谢米,Shaymin,6v胆小，特攻252，速度252,"6V Timid, Special Attack 252, Speed 252",yes,,,,BartekDolar
