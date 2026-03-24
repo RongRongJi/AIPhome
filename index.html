@@ -180,11 +180,19 @@
             padding: 20px;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(102, 126, 234, 0.5) rgba(255, 255, 255, 0.1);
         }
         .members-grid::-webkit-scrollbar {
-            display: none;
+            height: 8px;
+        }
+        .members-grid::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .members-grid::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
         }
         .members-grid .member-card {
             flex-shrink: 0;
@@ -835,6 +843,16 @@
                     currentGalleryIndex = parseInt(e.target.getAttribute('data-index'));
                     updateGalleryPhoto();
                 }
+            });
+
+            // 支持鼠标滚轮横向滚动名人堂
+            document.querySelectorAll('.members-grid').forEach(grid => {
+                grid.addEventListener('wheel', function(e) {
+                    if (e.deltaY !== 0) {
+                        e.preventDefault();
+                        this.scrollLeft += e.deltaY;
+                    }
+                }, { passive: false });
             });
         }
 
