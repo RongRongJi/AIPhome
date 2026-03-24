@@ -82,9 +82,8 @@
             overflow-y: visible;
             white-space: nowrap;
             padding-bottom: 8px;
-            /* Hide scrollbar for Chrome, Safari and Opera */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
         .tab-content::-webkit-scrollbar {
             display: none;
@@ -101,11 +100,9 @@
             padding: 24px;
             width: 260px;
             min-height: 220px;
-            /* max-height: 220px;  移除高度限制 */
             box-sizing: border-box;
             text-align: center;
             margin-right: 32px;
-            /* 保证内容溢出时隐藏 */
             overflow: hidden;
         }
         .member-card:last-child {
@@ -135,7 +132,7 @@
             word-break: break-all;
             white-space: normal;
             overflow-wrap: break-word;
-            min-height: 4.6em; /* 3行高度，假设每行1.2em */
+            min-height: 4.6em;
             max-height: 4.6em;
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -153,7 +150,6 @@
             min-width: 220px;
             max-width: 320px;
             min-height: 220px;
-            /* max-height: 220px; 移除高度限制 */
             }
         }
         .member-honor-list {
@@ -182,7 +178,7 @@
             max-width: 900px;
             margin: 0 auto;
             position: relative;
-            min-height: 440px; /* 保证整体高度不变（400px图片+margin等） */
+            min-height: 440px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -329,16 +325,6 @@
             min-width: 220px;
             text-align: center;
         }
-        .honor-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #b8860b;
-        }
-        .honor-desc {
-            font-size: 0.98rem;
-            color: #444;
-        }
         /* 活动记录 */
         .activity-records {
             background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
@@ -456,363 +442,24 @@
     </style>
 </head>
 <body>
-    <!-- 首页 -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <img src="resource/logo/logo-blue.png" alt="AIP LOGO" class="hero-logo">
-            <div class="hero-title">AIP 公会</div>
-            <div class="hero-subtitle">Anything is Possible · 一切皆有可能</div>
         </div>
     </section>
 
-    <!-- 名人堂 -->
     <section class="hall-of-fame" id="hall-of-fame">
-        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#1976d2;">公会名人堂</h2>
-        <div class="tabs">
-            <div class="tab active" data-tab="leaders">历代会长</div>
-            <div class="tab" data-tab="honors">个人荣誉</div>
-            <div class="tab" data-tab="core">核心成员</div>
+        <h2 id="hall-of-fame-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#1976d2;"></h2>
+        <div class="tabs" id="tabs">
         </div>
-        <div class="tab-content active" id="tab-leaders">
-            <!-- 示例数据，实际可替换 -->
-            <div class="member-card">
-                <img src="resource/leader/aipxzh.jpeg" class="member-img" alt="会长1">
-                <div class="member-name">AIPxzh（白灵）</div>
-                <div class="member-join">2018 - 2021.7</div>
-                <div class="member-desc">一代目：AIP公会PokeMMO分部创始人，主打PVP</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/shxu.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">SHXU（姝栩）</div>
-                <div class="member-join">2021.7 - 2021.7</div>
-                <div class="member-desc">代理会长：白灵不在期间，担任公会代理会长</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/aipxzh.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">AIPxzh（白灵）</div>
-                <div class="member-join">2021.7 - 2021.11</div>
-                <div class="member-desc">一代目</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/羽墨.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">羽墨</div>
-                <div class="member-join">2021.11 - 2022.1</div>
-                <div class="member-desc">AIP和樱落公会联动，双方进行了短期的互换会长活动</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/hyqio.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">hyqio</div>
-                <div class="member-join">2022.1 - 2022.3</div>
-                <div class="member-desc">二代目：主打PVE</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/plzzz.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">Plzzz（小皮）</div>
-                <div class="member-join">2022.3 - 2022.5</div>
-                <div class="member-desc">三代目：主打PVE，南通训恋家</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/hyqio.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">hyqio</div>
-                <div class="member-join">2022.5 - 2023.5</div>
-                <div class="member-desc">二代目：AIP第一封号大帝</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/羽墨.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">羽墨</div>
-                <div class="member-join">2023.5 - 2023.7</div>
-                <div class="member-desc">代理会长：前任会长退游，临时接任公会管理。这段时间AIP和樱落共同管理。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/rrj.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">RongRongJi（蓉蓉鸡）</div>
-                <div class="member-join">2023.7 - 2023.11</div>
-                <div class="member-desc">四代目：主PVP</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/qqq.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">qqqianx</div>
-                <div class="member-join">2023.11 - 2024.4</div>
-                <div class="member-desc">五代目：主PVP，作为OU分级榜一，吸引许多PVP玩家加入公会</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/leader/rrj.jpeg" class="member-img" alt="会长2">
-                <div class="member-name">RongRongJi（蓉蓉鸡）</div>
-                <div class="member-join">2024.4 - 至今</div>
-                <div class="member-desc">四代目</div>
-            </div>
-        </div>
-        <div class="tab-content" id="tab-honors">
-            <div class="member-card">
-                <img src="resource/leader/qqq.jpeg" class="member-img" alt="荣誉1">
-                <div class="member-name">qqqianx</div>
-                <div class="member-join">3q学姐</div>
-                <ul class="member-honor-list">
-                    <li>24年PSL常规赛OU分级MVP</li>
-                    <li>18赛季OU定榜第一</li>
-                    <li>13赛季OU西部季后赛冠军</li>
-                    <li>[OU] Fly to the Moon! 锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/skyaspera.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">SKYaspera</div>
-                <div class="member-join">天际</div>
-                <ul class="member-honor-list">
-                    <li>25年PSL常规赛Breakout Player</li>
-                    <li>18赛季DB西部季后赛冠军</li>
-                    <li>18赛季DB东部季后赛季军</li>
-                    <li>[OU] There is No Running With Scizor 锦标赛冠军</li>
-                    <li>[DB] Brain Over Brawn 锦标赛冠军</li>
-                    <li>[DB] Community Combat Doubles #434 锦标赛冠军</li>
-                    <li>[DB] Brain + Strenght = Win 锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xingyue.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">Uitmxc</div>
-                <div class="member-join">星跃学姐</div>
-                <ul class="member-honor-list">
-                    <li>17赛季UU东部季后赛亚军</li>
-                    <li>17赛季DB东部季后赛亚军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/zg.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">CLANNAD</div>
-                <div class="member-join">ZZgggg饱饱</div>
-                <ul class="member-honor-list">
-                    <li>17赛季UU西部季后赛亚军</li>
-                    <li>[UU] Community Combat Doubles #440 锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/akun.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">Akun</div>
-                <div class="member-join">Wangmankun</div>
-                <ul class="member-honor-list">
-                    <li>[UU] Just roll with it 锦标赛冠军</li>
-                    <li>[UU] I'm Not Afraid 锦标赛冠军</li>
-                    <li>[NU] Warning: Bite and swim! 锦标赛冠军</li>
-                    <li>[UU] Ancestral Guardian, The Psychic Bird 锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xibao.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">CaiXuKun</div>
-                <div class="member-join">天才艺术细胞</div>
-                <ul class="member-honor-list">
-                    <li> [OU] Iron Rose Tournament 锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xibaiyu.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">BaiY</div>
-                <div class="member-join">西八i鱼</div>
-                <ul class="member-honor-list">
-                    <li>18赛季NU东部季后赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/zhinian.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">MiracleResurgenc</div>
-                <div class="member-join">执念无情</div>
-                <ul class="member-honor-list">
-                    <li>[UU] Community Combat #406锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/acqua.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">AcquaPura</div>
-                <div class="member-join">阿夸</div>
-                <ul class="member-honor-list">
-                    <li>[DB] Community Combat #421锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xixi.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">XiXizuikea</div>
-                <div class="member-join">xixi</div>
-                <ul class="member-honor-list">
-                    <li>20赛季UU东部季后赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/diao.jpeg" class="member-img" alt="荣誉2">
-                <div class="member-name">APikadiao</div>
-                <div class="member-join">吊哥</div>
-                <ul class="member-honor-list">
-                    <li> [UU] Community Combat UU #452 锦标赛冠军</li>
-                    <!-- 更多荣誉可继续添加 -->
-                </ul>
-            </div>
-        </div>
-        <div class="tab-content" id="tab-core">
-            <div class="member-card">
-                <img src="resource/core/zmoyi.jpeg" class="member-img" alt="核心1">
-                <div class="member-name">ZmoYi</div>
-                <div class="member-join">就摸鱼</div>
-                <div class="member-desc">单遇牢王。巨沼怪、君主蛇稀有闪拥有者。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/cbco.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">Feyy</div>
-                <div class="member-join">Cbco</div>
-                <div class="member-desc">公会LOGO、论坛公会墙制作人，活动副本攻略组，年兽头拥有者。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/nfz.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">NFZ</div>
-                <div class="member-join">三字大佬</div>
-                <div class="member-desc">烈焰猴、阿勃梭鲁稀有闪拥有者，年兽头拥有者。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xuanhua.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">HelloKitty</div>
-                <div class="member-join">萱华 菲菲</div>
-                <div class="member-desc">AIP第一91煮波。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xingyue.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">Uitmxc</div>
-                <div class="member-join">星跃学姐</div>
-                <div class="member-desc">可爱又可靠的全分级超人。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/momo.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">AAAluckymomo</div>
-                <div class="member-join">沫沫</div>
-                <div class="member-desc">AIP皇帝。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/bohe.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">MintCatY</div>
-                <div class="member-join">薄荷猫</div>
-                <div class="member-desc">刷闪、赌闪的神。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/tq.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">TQAAQT</div>
-                <div class="member-join">拖把</div>
-                <div class="member-desc">卡布达小子！</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/skyaspera.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">SKYaspera</div>
-                <div class="member-join">天际</div>
-                <div class="member-desc">全分级PVP超级大神。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/acqua.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">AcquaPura</div>
-                <div class="member-join">阿夸</div>
-                <div class="member-desc">神秘的百科全书。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/zhinian.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">MiracleResurgenc</div>
-                <div class="member-join">执念无情</div>
-                <div class="member-desc">“只要他在，比赛就一定会赢，但是他经常不在”的存在。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/zg.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">CLANNAD</div>
-                <div class="member-join">ZZgggg饱饱</div>
-                <div class="member-desc">可爱的小萝同学。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/feiti.png" class="member-img" alt="核心2">
-                <div class="member-name">aprehend</div>
-                <div class="member-join">大飞踢</div>
-                <div class="member-desc">给你一脚大飞踢。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/tishen.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">Lyan</div>
-                <div class="member-join">替身哥</div>
-                <div class="member-desc">先替身一下。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/akun.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">Akun</div>
-                <div class="member-join">Wangmankun</div>
-                <div class="member-desc">UU高手，全分级科研大师。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xibao.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">CaiXuKun</div>
-                <div class="member-join">天才艺术细胞</div>
-                <div class="member-desc">全分级PVP大师。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xiaolang.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">Shelter</div>
-                <div class="member-join">小狼aaa</div>
-                <div class="member-desc">值得信赖的熬夜选手，比赛经理兼最佳替补。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/xibaiyu.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">BaiY</div>
-                <div class="member-join">西八i鱼</div>
-                <div class="member-desc">NU领域大师，晴天小子。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/ice.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">Muice</div>
-                <div class="member-join">muice</div>
-                <div class="member-desc">我超，冰！</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/eeqi.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">EEQi</div>
-                <div class="member-join">无锋</div>
-                <div class="member-desc">OU大学霸！</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/sou.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">iArcee</div>
-                <div class="member-join">vic</div>
-                <div class="member-desc">委内瑞拉人，AIP走向国际化第一人。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/trust.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">trust</div>
-                <div class="member-join">关白</div>
-                <div class="member-desc">关白饱饱，带领大家走进蓝良世界。</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/yl.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">oYLo</div>
-                <div class="member-join">兵马俑</div>
-                <div class="member-desc">奥奇传说，启动！</div>
-            </div>
-            <div class="member-card">
-                <img src="resource/core/hhwzw.jpeg" class="member-img" alt="核心2">
-                <div class="member-name">hhwzw</div>
-                <div class="member-join">虎虎王中王</div>
-                <div class="member-desc">随机分级超级大神！</div>
-            </div>
+        <div id="tab-contents">
         </div>
     </section>
 
-    <!-- 照片墙 -->
     <section class="gallery" id="gallery">
-        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#d72660;">公会照片墙</h2>
+        <h2 id="gallery-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#d72660;"></h2>
         <div class="gallery-container">
-            <img src="resource/photo/forhy.jpeg" class="gallery-photo" id="gallery-photo" alt="公会合影">
+            <img class="gallery-photo" id="gallery-photo" alt="公会合影">
             <div class="gallery-info" id="gallery-info">
-                <div>2023.5</div>
-                <div>天堂塔敲响钟声</div>
             </div>
             <div class="gallery-controls">
                 <button class="gallery-btn" id="gallery-prev">&#8592;</button>
@@ -821,475 +468,193 @@
         </div>
     </section>
 
-    <!-- 荣誉墙 -->
     <section class="honor-wall" id="honor-wall">
-        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#b8860b;">荣誉墙</h2>
-        <div class="honor-timeline">
-            <div class="honor-timeline-item">
-                <div class="honor-timeline-dot"></div>
-                <div class="honor-timeline-content">
-                    <div class="honor-timeline-time">2024年6月</div>
-                    <img src="resource/honor/asiantt2.png" alt="2024年第二届亚洲TT赛亚军" class="honor-timeline-img">
-                    <div class="honor-title">2024年第二届亚洲TT赛亚军</div>
-                    <div class="honor-desc">参赛选手: qqqianx、ZZgggg、LTDZYI</div>
-                </div>
-            </div>
-            <div class="honor-timeline-item">
-                <div class="honor-timeline-dot"></div>
-                <div class="honor-timeline-content">
-                    <div class="honor-timeline-time">2024年7月</div>
-                    <img src="resource/honor/6tt.png" alt="2024年6月官方公会赛Team Tournament冠军" class="honor-timeline-img">
-                    <div class="honor-title">2024年6月官方公会赛Team Tournament冠军</div>
-                    <div class="honor-desc">参赛选手: ZZgggg、Uitmxc、shaosansan</div>
-                </div>
-            </div>
-            <div class="honor-timeline-item">
-                <div class="honor-timeline-dot"></div>
-                <div class="honor-timeline-content">
-                    <div class="honor-timeline-time">2024年8月</div>
-                    <img src="resource/honor/asiantt1.png" alt="2024年第四届亚洲TT赛冠军" class="honor-timeline-img">
-                    <div class="honor-title">2024年第四届亚洲TT赛冠军</div>
-                    <div class="honor-desc">参赛选手: qqqianx、ZZgggg、zhinianwuqing</div>
-                </div>
-            </div>
-            <div class="honor-timeline-item">
-                <div class="honor-timeline-dot"></div>
-                <div class="honor-timeline-content">
-                    <div class="honor-timeline-time">2025年1月</div>
-                    <img src="resource/honor/aiptt.webp" alt="2024年年度总决赛亚军" class="honor-timeline-img">
-                    <div class="honor-title">2024年官方公会赛Team Tournament年度总决赛亚军</div>
-                    <div class="honor-desc">参赛选手: qqqianx、Uitmxc、ZZgggg、SKYaspera、kexiniduiweiren</div>
-                </div>
-            </div>
-            <div class="honor-timeline-item">
-                <div class="honor-timeline-dot"></div>
-                <div class="honor-timeline-content">
-                    <div class="honor-timeline-time">2025年10月</div>
-                    <img src="resource/honor/aiptcl.webp" alt="2025年TCL挑战者杯冠军" class="honor-timeline-img">
-                    <div class="honor-title">2025年TCL挑战者杯冠军</div>
-                    <div class="honor-desc">参赛选手: KokenoCastro、qqqianx、lovepikadiao、Akun、iArcee、CaiXuKun、Uitmxc、Lyan、oYLo、SKYaspera、Beckle</div>
-                </div>
-            </div>
+        <h2 id="honor-wall-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#b8860b;"></h2>
+        <div class="honor-timeline" id="honor-timeline">
         </div>
     </section>
 
-    <!-- 活动记录 -->
     <section class="activity-records" id="activity-records">
-        <h2 style="text-align:center;font-size:2rem;margin-bottom:24px;color:#7b1fa2;">活动记录</h2>
-        <div class="activity-accordion">
-            <div class="activity-year">
-                <div class="activity-year-header" onclick="toggleActivityYear(this)">2025年 ▲</div>
-                <div class="activity-list" style="display:block;">
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2025年摇手指PVP</div>
-                            <div class="activity-time">2025年10月19日</div>
-                            <div class="activity-desc"> 双方精灵调整为5级，只带4只精灵，精灵不能重复，只能携带“摇手指”，道具无限制，精灵种类无限制，不能携带“压迫感”特性，不能使用基拉祈，对战中不能主动更换精灵。（27人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> kkwv</li>
-                                <li><span class="medal silver">🥈</span> oyld</li>
-                                <li><span class="medal bronze">🥉</span> lovepikadiao</li>
-                                <li><span class="medal bronze">🥉</span> Uitmxc</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/hr16kwy" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2025年8月周赛</div>
-                            <div class="activity-time">2025年8月</div>
-                            <div class="activity-desc"> OU分级（16人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> hhwzw</li>
-                                <li><span class="medal silver">🥈</span> SKYaspera</li>
-                                <li><span class="medal bronze">🥉</span> CaiXuKun</li>
-                                <li><span class="medal bronze">🥉</span> qqqianx</li>
-                            </ol>
-                            <div class="activity-desc"> NU分级（8人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> CaiXuKun</li>
-                                <li><span class="medal silver">🥈</span> lzwslz</li>
-                                <li><span class="medal bronze">🥉</span> iArcee</li>
-                                <li><span class="medal bronze">🥉</span> CLANNAD</li>
-                            </ol>
-                            <div class="activity-desc"> DB分级（8人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> CaiXuKun</li>
-                                <li><span class="medal silver">🥈</span> oylo</li>
-                                <li><span class="medal bronze">🥉</span> Alim</li>
-                                <li><span class="medal bronze">🥉</span> Akun</li>
-                            </ol>
-                            <div class="activity-desc"> UU分级（10人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> CLANNAD</li>
-                                <li><span class="medal silver">🥈</span> lovepikadiao</li>
-                                <li><span class="medal bronze">🥉</span> Uitmxc</li>
-                                <li><span class="medal bronze">🥉</span> Akun</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/bnml7tgt" target="_blank">OU分级赛程 &gt;</a>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/711cd2wg" target="_blank">NU分级赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2025年海陆空PVP</div>
-                            <div class="activity-time">2025年8月1日</div>
-                            <div class="activity-desc"> 每个玩家每轮只能使用3只精灵进行对战。这3只精灵必须分别为：单一蛋组为陆上群、单一蛋群为飞行群、蛋群限定为水中x群的一种或组合（例如该精灵为水中1x水中3，可以使用。为水中1x陆上则不能使用）（19人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> SKYaspera</li>
-                                <li><span class="medal silver">🥈</span> KyuCat</li>
-                                <li><span class="medal bronze">🥉</span> Uitmxc</li>
-                                <li><span class="medal bronze">🥉</span> qqqianx</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/sshtfntx" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2025年7月周赛</div>
-                            <div class="activity-time">2025年7月</div>
-                            <div class="activity-desc"> OU分级（15人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> qqqianx</li>
-                                <li><span class="medal silver">🥈</span> oYLo</li>
-                                <li><span class="medal bronze">🥉</span> Akun</li>
-                                <li><span class="medal bronze">🥉</span> HelloKitty</li>
-                            </ol>
-                            <div class="activity-desc"> NU分级（12人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> CaiXuKun</li>
-                                <li><span class="medal silver">🥈</span> Uitmxc</li>
-                                <li><span class="medal bronze">🥉</span> Beckle</li>
-                                <li><span class="medal bronze">🥉</span> Lyan</li>
-                            </ol>
-                            <div class="activity-desc"> DB分级（6人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> CaiXuKun</li>
-                                <li><span class="medal silver">🥈</span> Uitmxc</li>
-                            </ol>
-                            <div class="activity-desc"> UU分级（8人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> Uitmxc</li>
-                                <li><span class="medal silver">🥈</span> CaiXuKun</li>
-                                <li><span class="medal bronze">🥉</span> lzwslz</li>
-                                <li><span class="medal bronze">🥉</span> qqqianx</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/n768jjok" target="_blank">OU分级赛程 &gt;</a>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/qy9h0f0v" target="_blank">UU分级赛程 &gt;</a>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/yc55vcg8" target="_blank">DB分级赛程 &gt;</a>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/2u0gni03" target="_blank">NU分级赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2025年端午儿童双节会</div>
-                            <div class="activity-time">2025年5月31日</div>
-                            <div class="activity-desc"> UB分级淘汰赛（12人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> Uitmxc</li>
-                                <li><span class="medal silver">🥈</span> SKYaspera</li>
-                                <li><span class="medal bronze">🥉</span> hhwzw</li>
-                                <li><span class="medal bronze">🥉</span> xiaolangaaa</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/nul11bl4" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2025年劳模杯OU PVP</div>
-                            <div class="activity-time">2025年5月2日</div>
-                            <div class="activity-desc">为了奖励一年来辛苦战斗的劳模宝可梦，本次活动将让一些宝可梦好好放假！投票排名前五的精灵将在活动中放假！放假精灵列表：双弹瓦斯、吉利蛋、闪电鸟、基拉祈、席多蓝恩（29人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> Gangxiking</li>
-                                <li><span class="medal silver">🥈</span> VlPs</li>
-                                <li><span class="medal bronze">🥉</span> ylqvq</li>
-                                <li><span class="medal bronze">🥉</span> SKYaspera</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/3qv9djnb" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2025年清明节谁是卧底游戏</div>
-                            <div class="activity-time">2025年4月12日</div>
-                            <div class="activity-desc">三支队伍互相PVP找出队伍中的卧底（16人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> 冠军队伍：Geniusisoutofrea、ZZgggg、KKwv、balloonbb</li>
-                                <li><span class="medal silver">🥇</span> 获胜卧底：MuYunLiQiu</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <!-- 可继续添加2025年活动 -->
-
-                </div>
-            </div>
-            <div class="activity-year">
-                <div class="activity-year-header" onclick="toggleActivityYear(this)">2024年 ▼</div>
-                <div class="activity-list" style="display:none;">
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2024年国庆OU&RD组队赛</div>
-                            <div class="activity-time">2024年10月3日</div>
-                            <div class="activity-desc"> 两人一队，分别对战OU和随机分级，平局的情况选其中一人约定一个分级打决胜局（16队赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> SKYaspera & 阿门</li>
-                                <li><span class="medal silver">🥈</span> Reseledos & lianynu</li>
-                                <li><span class="medal bronze">🥉</span> philenalvy & Muice</li>
-                                <li><span class="medal bronze">🥉</span> CXzzi & Uitmxc</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/nul11bl4" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2024年海陆空PVP</div>
-                            <div class="activity-time">2024年8月3日</div>
-                            <div class="activity-desc"> 每个玩家每轮只能使用3只精灵进行对战。这3只精灵必须分别为：单一蛋组为陆上群、单一蛋群为飞行群、蛋群限定为水中x群的一种或组合（例如该精灵为水中1x水中3，可以使用。为水中1x陆上则不能使用）（27人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> ZZgggg</li>
-                                <li><span class="medal silver">🥈</span> Reseledos</li>
-                                <li><span class="medal bronze">🥉</span> SKYaspera</li>
-                                <li><span class="medal bronze">🥉</span> kuaijui</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/nul11bl4" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">TQAAQT的奇妙冒险</div>
-                            <div class="activity-time">2024年7月6日</div>
-                            <div class="activity-desc">每人队伍必须有一只暴鲤龙，获胜条件：①击杀对方6只精灵；②用暴鲤龙击杀对方3只精灵（16人瑞士轮）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> YuZhenglin</li>
-                                <li><span class="medal silver">🥈</span> Reseledos</li>
-                                <li><span class="medal bronze">🥉</span> LUOOOYI</li>
-                                <li><span class="medal bronze">🥉</span> Uitmxc</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/v9l322" target="_blank">瑞士轮赛程 &gt;</a>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/qbrv98jr" target="_blank">淘汰赛赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2024年儿童节UU邀请赛</div>
-                            <div class="activity-time">2024年6月10日</div>
-                            <div class="activity-desc">UU分级双败淘汰赛（8人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> ZZgggg</li>
-                                <li><span class="medal silver">🥈</span> zhinianwuqing</li>
-                                <li><span class="medal bronze">🥉</span> Kyucat</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/kirp0oh0" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2024年劳模杯OU PVP</div>
-                            <div class="activity-time">2024年5月3日</div>
-                            <div class="activity-desc">为了奖励一年来辛苦战斗的劳模宝可梦，本次活动将让一些宝可梦好好放假！投票排名前五的精灵将在活动中放假！放假精灵列表：三地鼠、吉利蛋、水君、双弹瓦斯、闪电鸟（30人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> Reseledos</li>
-                                <li><span class="medal silver">🥈</span> loveaklll</li>
-                                <li><span class="medal bronze">🥉</span> ZZgggg</li>
-                                <li><span class="medal bronze">🥉</span> ccykqh</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/3qv9djnb" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2024年迎春季OU友谊赛</div>
-                            <div class="activity-time">2024年3月16日</div>
-                            <div class="activity-desc">OU分级淘汰赛（28人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> CXzzi</li>
-                                <li><span class="medal silver">🥈</span> Fakerapper</li>
-                                <li><span class="medal bronze">🥉</span> xiaolangaaa</li>
-                                <li><span class="medal bronze">🥉</span> funyest</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/y97q2jmm" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <!-- 可继续添加2024年活动 -->
-                </div>
-            </div>
-            <div class="activity-year">
-                <div class="activity-year-header" onclick="toggleActivityYear(this)">2023年 ▼</div>
-                <div class="activity-list" style="display:none;">
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2023年国庆OU PVP邀请赛</div>
-                            <div class="activity-time">2023年10月2日</div>
-                            <div class="activity-desc">庆祝qqqianx荣获13赛季OU分级季后赛冠军，举办6V6 OU分级PVP，特别要求：队伍必须携带细胞或者草蛇。（16人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> loveaklll</li>
-                                <li><span class="medal silver">🥈</span> Chintsuru</li>
-                                <li><span class="medal bronze">🥉</span> liangjiehhh</li>
-                                <li><span class="medal bronze">🥉</span> NFZ</li>
-                            </ol>
-                            <a class="activity-more-link" href="https://challonge.com/zh_CN/u19dv473" target="_blank">查看完整赛程 &gt;</a>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-info">
-                            <div class="activity-title">2023年端午OU PVP邀请赛</div>
-                            <div class="activity-time">2023年6月23日</div>
-                            <div class="activity-desc">OU分级淘汰赛（32人赛）</div>
-                            <ol class="activity-top4">
-                                <li><span class="medal gold">🥇</span> bucn</li>
-                                <li><span class="medal silver">🥈</span> loveaklll</li>
-                                <li><span class="medal bronze">🥉</span> NFZ</li>
-                                <li><span class="medal bronze">🥉</span> qqqianx</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <!-- 可继续添加2023年活动 -->
-                </div>
-            </div>
-            <!-- 可继续添加更多年份 -->
+        <h2 id="activity-records-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#7b1fa2;"></h2>
+        <div class="activity-accordion" id="activity-accordion">
         </div>
     </section>
+
+    <script src="data.js"></script>
     <script>
-        // 名人堂Tab切换
-        const tabs = document.querySelectorAll('.tab');
-        const tabContents = {
-            leaders: document.getElementById('tab-leaders'),
-            honors: document.getElementById('tab-honors'),
-            core: document.getElementById('tab-core')
-        };
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                Object.values(tabContents).forEach(tc => tc.classList.remove('active'));
-                tabContents[tab.dataset.tab].classList.add('active');
-            });
-        });
+        let data = siteData;
+        let currentGalleryIndex = 0;
 
-        // 名人堂滚动效果
-        const container = document.getElementById('hall-of-fame');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        container.addEventListener('mousedown', (e) => {
-        isDown = true;
-        container.classList.add('active');
-        startX = e.pageX - container.offsetLeft;
-        scrollLeft = container.scrollLeft;
-        });
-
-        container.addEventListener('mouseleave', () => {
-        isDown = false;
-        container.classList.remove('active');
-        });
-
-        container.addEventListener('mouseup', () => {
-        isDown = false;
-        container.classList.remove('active');
-        });
-
-        container.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 1; // 滚动速度可调
-        container.scrollLeft = scrollLeft - walk;
-        });
-
-        // 名人堂横向滚动鼠标拖拽
-function enableDragScroll(selector) {
-    const containers = document.querySelectorAll(selector);
-    containers.forEach(container => {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        container.addEventListener('mousedown', (e) => {
-            isDown = true;
-            // container.classList.add('active'); // 不再操作 active 类，避免 display:none 问题
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-        });
-        container.addEventListener('mouseleave', () => {
-            isDown = false;
-            // container.classList.remove('active');
-        });
-        container.addEventListener('mouseup', () => {
-            isDown = false;
-            // container.classList.remove('active');
-        });
-        container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 1; // 滚动速度
-            container.scrollLeft = scrollLeft - walk;
-        });
-    });
-}
-// 只对所有.tab-content横向滚动区域启用拖拽
-enableDragScroll('.tab-content');
-
-        // 照片墙轮播
-        const galleryPhotos = [
-            {
-                src: 'resource/photo/forhy.jpeg',
-                time: '2023年5',
-                desc: '天堂塔敲响总钟声。'
-            },
-            {
-                src: 'resource/photo/mmo.jpeg',
-                time: '2023年7',
-                desc: '和MMO公会一起活动。'
-            },
-            {
-                src: 'resource/photo/春节合影.png',
-                time: '2025年1月',
-                desc: '元旦掠影。'
-            },
-            {
-                src: 'resource/photo/生日会.png',
-                time: '2025年1月',
-                desc: '会长生日会，捉迷藏。'
-            },
-            {
-                src: 'resource/photo/捧杯时刻.png',
-                time: '2025年2月',
-                desc: '捧起年度银杯的合影。'
-            }
-        ];
-        let galleryIndex = 0;
-        const galleryPhoto = document.getElementById('gallery-photo');
-        const galleryInfo = document.getElementById('gallery-info');
-        function updateGallery(idx) {
-            const item = galleryPhotos[idx];
-            galleryPhoto.src = item.src;
-            galleryInfo.innerHTML = `<div>${item.time} · 合影</div><div>${item.desc}</div>`;
+        function renderPage() {
+            renderHero();
+            renderHallOfFame();
+            renderGallery();
+            renderHonorWall();
+            renderActivityRecords();
+            initEventListeners();
         }
-        document.getElementById('gallery-prev').onclick = function() {
-            galleryIndex = (galleryIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
-            updateGallery(galleryIndex);
-        };
-        document.getElementById('gallery-next').onclick = function() {
-            galleryIndex = (galleryIndex + 1) % galleryPhotos.length;
-            updateGallery(galleryIndex);
-        };
-        // 自动轮播
-        setInterval(() => {
-            galleryIndex = (galleryIndex + 1) % galleryPhotos.length;
-            updateGallery(galleryIndex);
-        }, 5000);
+
+        function renderHero() {
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.innerHTML = `
+                <img src="${data.site.hero.logo}" alt="AIP LOGO" class="hero-logo">
+                <div class="hero-title">${data.site.hero.title}</div>
+                <div class="hero-subtitle">${data.site.hero.subtitle}</div>
+            `;
+        }
+
+        function renderHallOfFame() {
+            document.getElementById('hall-of-fame-title').textContent = data.hallOfFame.title;
+            
+            const tabsContainer = document.getElementById('tabs');
+            tabsContainer.innerHTML = Object.entries(data.hallOfFame.tabs).map(([key, label], index) => `
+                <div class="tab ${index === 0 ? 'active' : ''}" data-tab="${key}">${label}</div>
+            `).join('');
+
+            const tabContentsContainer = document.getElementById('tab-contents');
+            tabContentsContainer.innerHTML = Object.entries(data.hallOfFame.tabs).map(([key, label], index) => {
+                let members = [];
+                if (key === 'leaders') members = data.hallOfFame.leaders;
+                else if (key === 'honors') members = data.hallOfFame.honors;
+                else if (key === 'core') members = data.hallOfFame.core;
+
+                const membersHTML = members.map(member => {
+                    if (key === 'honors' && member.honors) {
+                        return `
+                            <div class="member-card">
+                                <img src="${member.img}" class="member-img" alt="${member.name}">
+                                <div class="member-name">${member.name}</div>
+                                <div class="member-join">${member.join}</div>
+                                <ul class="member-honor-list">
+                                    ${member.honors.map(honor => `<li>${honor}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    } else {
+                        return `
+                            <div class="member-card">
+                                <img src="${member.img}" class="member-img" alt="${member.name}">
+                                <div class="member-name">${member.name}</div>
+                                <div class="member-join">${member.join}</div>
+                                <div class="member-desc">${member.desc}</div>
+                            </div>
+                        `;
+                    }
+                }).join('');
+
+                return `<div class="tab-content ${index === 0 ? 'active' : ''}" id="tab-${key}">${membersHTML}</div>`;
+            }).join('');
+        }
+
+        function renderGallery() {
+            document.getElementById('gallery-title').textContent = data.gallery.title;
+            updateGalleryPhoto();
+        }
+
+        function updateGalleryPhoto() {
+            const photo = data.gallery.photos[currentGalleryIndex];
+            document.getElementById('gallery-photo').src = photo.src;
+            document.getElementById('gallery-info').innerHTML = `
+                <div>${photo.time}</div>
+                <div>${photo.desc}</div>
+            `;
+        }
+
+        function renderHonorWall() {
+            document.getElementById('honor-wall-title').textContent = data.honorWall.title;
+            const timelineContainer = document.getElementById('honor-timeline');
+            timelineContainer.innerHTML = data.honorWall.timeline.map(item => `
+                <div class="honor-timeline-item">
+                    <div class="honor-timeline-dot"></div>
+                    <div class="honor-timeline-content">
+                        <div class="honor-timeline-time">${item.time}</div>
+                        <img src="${item.img}" alt="${item.title}" class="honor-timeline-img">
+                        <div class="honor-title">${item.title}</div>
+                        <div class="honor-desc">${item.desc}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderActivityRecords() {
+            document.getElementById('activity-records-title').textContent = data.activityRecords.title;
+            const accordionContainer = document.getElementById('activity-accordion');
+            accordionContainer.innerHTML = data.activityRecords.years.map(yearData => {
+                const activitiesHTML = yearData.activities.map(activity => {
+                    let top4HTML = activity.top4 ? activity.top4.map(item => `
+                        <li><span class="medal ${item.medal}">${item.medal === 'gold' ? '🥇' : item.medal === 'silver' ? '🥈' : '🥉'}</span> ${item.name}</li>
+                    `).join('') : '';
+
+                    let subTiersHTML = activity.subTiers ? activity.subTiers.map(subTier => {
+                        let subTop4HTML = subTier.top4 ? subTier.top4.map(item => `
+                            <li><span class="medal ${item.medal}">${item.medal === 'gold' ? '🥇' : item.medal === 'silver' ? '🥈' : '🥉'}</span> ${item.name}</li>
+                        `).join('') : '';
+                        return `
+                            <div class="activity-desc">${subTier.name}${subTier.desc}</div>
+                            <ol class="activity-top4">${subTop4HTML}</ol>
+                        `;
+                    }).join('') : '';
+
+                    let linksHTML = activity.links ? activity.links.map(link => `
+                        <a class="activity-more-link" href="${link.url}" target="_blank">${link.text}</a>
+                    `).join('') : '';
+
+                    return `
+                        <div class="activity-card">
+                            <div class="activity-info">
+                                <div class="activity-title">${activity.title}</div>
+                                <div class="activity-time">${activity.time}</div>
+                                <div class="activity-desc">${activity.desc}</div>
+                                ${top4HTML ? `<ol class="activity-top4">${top4HTML}</ol>` : ''}
+                                ${subTiersHTML}
+                                ${linksHTML}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                return `
+                    <div class="activity-year">
+                        <div class="activity-year-header" onclick="toggleActivityYear(this)">${yearData.year} ${yearData.expanded ? '▲' : '▼'}</div>
+                        <div class="activity-list" style="display:${yearData.expanded ? 'block' : 'none'};">
+                            ${activitiesHTML}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function initEventListeners() {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById(`tab-${tabId}`).classList.add('active');
+                });
+            });
+
+            document.getElementById('gallery-prev').addEventListener('click', function() {
+                currentGalleryIndex = (currentGalleryIndex - 1 + data.gallery.photos.length) % data.gallery.photos.length;
+                updateGalleryPhoto();
+            });
+
+            document.getElementById('gallery-next').addEventListener('click', function() {
+                currentGalleryIndex = (currentGalleryIndex + 1) % data.gallery.photos.length;
+                updateGalleryPhoto();
+            });
+        }
 
         function toggleActivityYear(header) {
             const list = header.nextElementSibling;
-            if (list.style.display === 'none' || list.style.display === '') {
-                list.style.display = 'block';
-                header.innerHTML = header.innerHTML.replace('▼', '▲');
-            } else {
-                list.style.display = 'none';
-                header.innerHTML = header.innerHTML.replace('▲', '▼');
-            }
+            const isExpanded = list.style.display === 'block';
+            list.style.display = isExpanded ? 'none' : 'block';
+            const yearText = header.textContent.replace(/[▲▼]/g, '').trim();
+            header.textContent = yearText + ' ' + (isExpanded ? '▼' : '▲');
         }
+
+        document.addEventListener('DOMContentLoaded', renderPage);
     </script>
 </body>
 </html>
