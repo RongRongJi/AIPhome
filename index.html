@@ -5,13 +5,53 @@
     <title>AIP PokeMMO公会墙</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #f5f5f5;
+            box-sizing: border-box;
         }
-        /* 首页背景及遮罩 */
+        body, html {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f0c29);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            will-change: background-position;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 25s linear infinite;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+        @keyframes float {
+            0% { transform: translate3d(0, 100vh, 0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate3d(0, -100vh, 0); opacity: 0; }
+        }
         .hero {
             position: relative;
             height: 100vh;
@@ -19,12 +59,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            transform: translateZ(0);
         }
         .hero::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.45);
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(15,12,41,0.8) 100%);
             z-index: 1;
         }
         .hero-content {
@@ -32,452 +74,570 @@
             z-index: 2;
             text-align: center;
             color: #fff;
+            animation: fadeInUp 1.5s ease-out;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 50px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
         }
         .hero-logo {
-            width: 120px;
-            margin-bottom: 24px;
+            width: 180px;
+            margin-bottom: 32px;
+            animation: pulse 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.8));
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale3d(1, 1, 1); }
+            50% { transform: scale3d(1.05, 1.05, 1); }
         }
         .hero-title {
-            font-size: 3rem;
-            font-weight: bold;
-            letter-spacing: 4px;
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px rgba(102, 126, 234, 0.5);
         }
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-top: 12px;
-            opacity: 0.85;
+            font-size: 1.8rem;
+            margin-top: 16px;
+            opacity: 0.95;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
         }
-        /* 名人堂 */
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(102, 126, 234, 0.4);
+        }
         .hall-of-fame {
-            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-            padding: 60px 0 40px 0;
+            position: relative;
+            z-index: 1;
+            padding: 100px 0 80px 0;
         }
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 32px;
+            margin-bottom: 48px;
+            gap: 16px;
+            flex-wrap: wrap;
         }
         .tab {
-            padding: 12px 32px;
-            margin: 0 8px;
-            background: #fff;
-            border-radius: 24px 24px 0 0;
+            padding: 16px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
             cursor: pointer;
-            font-weight: bold;
-            color: #3a3a3a;
-            border-bottom: 3px solid transparent;
-            transition: background 0.2s, border-bottom 0.2s;
+            font-weight: 700;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            font-size: 1.1rem;
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate3d(0, -5px, 0);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
         }
         .tab.active {
-            background: #1976d2;
-            color: #fff;
-            border-bottom: 3px solid #1976d2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            transform: translate3d(0, -5px, 0);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.5);
         }
         .tab-content {
             display: none;
-            width: 80vw;
-            max-width: 1200px;
+            width: 90vw;
+            max-width: 1600px;
             margin: 0 auto;
-            overflow-x: auto;
-            overflow-y: visible;
-            white-space: nowrap;
-            padding-bottom: 8px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .tab-content::-webkit-scrollbar {
-            display: none;
         }
         .tab-content.active {
             display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .members-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 32px;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .members-grid::-webkit-scrollbar {
+            display: none;
+        }
+        .members-grid .member-card {
+            flex-shrink: 0;
+            scroll-snap-align: start;
         }
         .member-card {
-            display: inline-block;
-            vertical-align: top;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 24px;
-            width: 260px;
-            min-height: 220px;
-            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 32px;
             text-align: center;
-            margin-right: 32px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
             overflow: hidden;
+            will-change: transform;
+            backface-visibility: hidden;
         }
-        .member-card:last-child {
-            margin-right: 0;
+        .member-card:hover {
+            transform: translate3d(0, -10px, 0) scale3d(1.02, 1.02, 1);
+            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.4);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+        .member-img-container {
+            position: relative;
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 4px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+        .member-card:hover .member-img-container {
+            transform: scale3d(1.1, 1.1, 1);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
         }
         .member-img {
-            width: 80px;
-            height: 80px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 12px;
-            border: 2px solid #1976d2;
+            display: block;
         }
         .member-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 6px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .member-join {
-            font-size: 0.95rem;
-            color: #888;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
         }
         .member-desc {
-            font-size: 0.98rem;
-            color: #444;
-            word-break: break-all;
-            white-space: normal;
-            overflow-wrap: break-word;
-            min-height: 4.6em;
-            max-height: 4.6em;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        @media (max-width: 900px) {
-            .tab-content {
-            width: 98vw;
-            padding-left: 2vw;
-            padding-right: 2vw;
-            }
-            .member-card {
-            width: 80vw;
-            min-width: 220px;
-            max-width: 320px;
-            min-height: 220px;
-            }
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
         }
         .member-honor-list {
-                text-align: left;
-                margin: 10px 0 0 0;
-                padding-left: 20px;
-                font-size: 0.98rem;
-                color: #444;
-                line-height: 1.5;
-                max-height: none;
-                overflow: visible;
-                word-break: break-all;
-                white-space: normal;
-            }
-            .member-honor-list li {
-                margin-bottom: 2px;
-                word-break: break-all;
-                white-space: normal;
-            }
-        /* 照片墙 */
+            text-align: left;
+            margin: 16px 0 0 0;
+            padding-left: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+        }
+        .member-honor-list li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .member-honor-list li::marker {
+            content: '✨ ';
+            font-size: 1rem;
+        }
         .gallery {
-            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            padding: 60px 0 40px 0;
+            position: relative;
+            z-index: 1;
+            padding: 100px 0 80px 0;
         }
         .gallery-container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            min-height: 440px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
+        }
+        .gallery-main {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 32px;
+            padding: 40px;
+            margin-bottom: 32px;
         }
         .gallery-photo {
-            height: 400px;
-            width: auto;
-            max-width: 100%;
+            width: 100%;
+            max-height: 600px;
             object-fit: contain;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
             display: block;
             margin: 0 auto;
+            transition: opacity 0.3s ease;
+            will-change: opacity;
         }
         .gallery-info {
-            margin-top: 16px;
+            margin-top: 24px;
             text-align: center;
-            color: #333;
+            color: #fff;
+        }
+        .gallery-info div:first-child {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        .gallery-info div:last-child {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
         .gallery-controls {
             display: flex;
             justify-content: center;
             gap: 24px;
-            margin-top: 12px;
+            margin-top: 24px;
         }
         .gallery-btn {
-            background: #1976d2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 1.3rem;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            will-change: transform;
+            backface-visibility: hidden;
         }
         .gallery-btn:hover {
-            background: #125ea2;
+            transform: scale3d(1.15, 1.15, 1);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
         }
-        /* 荣誉墙 */
-        .honor-timeline {
-                position: relative;
-                max-width: 700px;
-                margin: 0 auto;
-                padding: 32px 0 32px 0;
-            }
-            .honor-timeline::before {
-                content: '';
-                position: absolute;
-                left: 32px;
-                top: 0;
-                bottom: 0;
-                width: 4px;
-                background: linear-gradient(180deg,#ffe082 0%,#b8860b 100%);
-                border-radius: 2px;
-            }
-            .honor-timeline-item {
-                display: flex;
-                align-items: flex-start;
-                margin-bottom: 48px;
-                position: relative;
-            }
-            .honor-timeline-dot {
-                width: 18px;
-                height: 18px;
-                background: #b8860b;
-                border: 3px solid #fffbe6;
-                border-radius: 50%;
-                position: relative;
-                left: 24px;
-                top: 8px;
-                z-index: 2;
-                box-shadow: 0 2px 8px rgba(184,134,11,0.15);
-            }
-            .honor-timeline-content {
-                background: #fff;
-                border-radius: 12px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-                padding: 20px 28px;
-                margin-left: 48px;
-                min-width: 0;
-                flex: 1;
-                position: relative;
-            }
-            .honor-timeline-time {
-                font-size: 1.05rem;
-                color: #b8860b;
-                font-weight: bold;
-                margin-bottom: 8px;
-            }
-            .honor-timeline-img {
-                width: 100%;
-                max-width: 320px;
-                border-radius: 8px;
-                margin-bottom: 12px;
-                box-shadow: 0 2px 8px rgba(184,134,11,0.08);
-                display: block;
-            }
-            .honor-title {
-                font-size: 1.1rem;
-                font-weight: bold;
-                margin-bottom: 6px;
-                color: #b8860b;
-            }
-            .honor-desc {
-                font-size: 0.98rem;
-                color: #444;
-            }
-            @media (max-width: 600px) {
-                .honor-timeline-content {
-                    padding: 14px 10px;
-                }
-                .honor-timeline-img {
-                    max-width: 98vw;
-                }
-                .honor-timeline::before {
-                    left: 12px;
-                }
-                .honor-timeline-dot {
-                    left: 4px;
-                }
-                .honor-timeline-item {
-                    margin-bottom: 32px;
-                }
-            }
+        .gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+            padding: 0 20px;
+        }
+        .gallery-thumb {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            border: 3px solid transparent;
+            opacity: 0.6;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+        .gallery-thumb:hover {
+            opacity: 0.9;
+            transform: scale3d(1.05, 1.05, 1);
+        }
+        .gallery-thumb.active {
+            opacity: 1;
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
         .honor-wall {
-            background: linear-gradient(135deg, #fdf6e3 0%, #f5e6ca 100%);
-            padding: 60px 0 40px 0;
+            position: relative;
+            z-index: 1;
+            padding: 100px 0 80px 0;
         }
-        .honor-list {
+        .honor-timeline {
+            position: relative;
             max-width: 900px;
             margin: 0 auto;
+            padding: 40px 0;
+        }
+        .honor-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            border-radius: 2px;
+        }
+        .honor-timeline-item {
             display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
-            justify-content: center;
+            align-items: center;
+            margin-bottom: 64px;
+            position: relative;
         }
-        .honor-card {
-            background: #fff;
+        .honor-timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .honor-timeline-dot {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: 4px solid #1a1a2e;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+        }
+        .honor-timeline-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 32px;
+            width: 45%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+        .honor-timeline-content:hover {
+            transform: scale3d(1.03, 1.03, 1);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+        .honor-timeline-time {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .honor-timeline-img {
+            width: 100%;
+            max-width: 350px;
             border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 24px 32px;
-            min-width: 220px;
-            text-align: center;
+            margin-bottom: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: block;
         }
-        /* 活动记录 */
+        .honor-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .honor-desc {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
         .activity-records {
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-            padding: 60px 0 60px 0;
+            position: relative;
+            z-index: 1;
+            padding: 100px 0 80px 0;
         }
         .activity-accordion {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .activity-year {
-            margin-bottom: 18px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.7);
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            margin-bottom: 24px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
         .activity-year-header {
-            font-size: 1.15rem;
-            font-weight: bold;
-            color: #7b1fa2;
-            padding: 12px 18px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            padding: 24px 32px;
             cursor: pointer;
             user-select: none;
-            border-radius: 10px 10px 0 0;
-            background: #f3e8fd;
-            transition: background 0.2s;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .activity-year-header:hover {
-            background: #e1c8fa;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .activity-year-header::after {
+            content: '▼';
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        .activity-year-header.active::after {
+            transform: rotate(180deg);
         }
         .activity-list {
             display: none;
+            padding: 0 20px 20px 20px;
+        }
+        .activity-list.show {
+            display: block;
         }
         .activity-card {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 24px;
-            display: flex;
-            margin-top: 12px;
-            flex-wrap: wrap;
-            gap: 24px;
-            align-items: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 32px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+            will-change: transform;
+            backface-visibility: hidden;
         }
-        .activity-info {
-            flex: 1 1 220px;
+        .activity-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translate3d(10px, 0, 0);
+            border-color: rgba(102, 126, 234, 0.4);
         }
         .activity-title {
-            font-size: 1.15rem;
-            font-weight: bold;
-            margin-bottom: 6px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .activity-time {
-            font-size: 0.95rem;
-            color: #888;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 16px;
         }
         .activity-desc {
-            font-size: 0.98rem;
-            color: #444;
-        }
-        .activity-img {
-            width: 180px;
-            max-width: 100%;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            margin-bottom: 16px;
         }
         .activity-top4 {
-            margin: 10px 0 0 0;
-            padding-left: 18px;
+            margin: 0;
+            padding-left: 0;
             font-size: 1rem;
-            color: #444;
+            color: rgba(255, 255, 255, 0.9);
             list-style: none;
         }
         .activity-top4 li {
-            margin-bottom: 2px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 12px;
         }
         .medal {
-            font-size: 1.1em;
+            font-size: 1.3em;
             font-weight: bold;
-            width: 1.6em;
+            width: 2em;
             display: inline-block;
             text-align: center;
+            filter: drop-shadow(0 0 10px currentColor);
         }
-        .medal.gold { color: #e6b800; }
-        .medal.silver { color: #b0b0b0; }
-        .medal.bronze { color: #c97a4b; }
+        .medal.gold { color: #ffd700; }
+        .medal.silver { color: #c0c0c0; }
+        .medal.bronze { color: #cd7f32; }
         .activity-more-link {
             display: inline-block;
-            margin: 12px 0 0 0;
-            color: #7b1fa2;
-            font-weight: bold;
+            margin: 16px 8px 0 0;
+            color: #fff;
+            font-weight: 700;
             text-decoration: none;
-            border-radius: 6px;
-            padding: 6px 16px;
-            background: #f3e8fd;
-            transition: background 0.2s;
+            border-radius: 12px;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s;
         }
         .activity-more-link:hover {
-            background: #e1c8fa;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
-        @media (max-width: 900px) {
-            .tab-content.active, .honor-list, .activity-list {
-                flex-direction: column;
-                align-items: center;
+        @media (max-width: 1024px) {
+            .honor-timeline::before {
+                left: 30px;
             }
-            .activity-card {
-                flex-direction: column;
-                align-items: flex-start;
+            .honor-timeline-dot {
+                left: 30px;
+            }
+            .honor-timeline-item,
+            .honor-timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+            .honor-timeline-content {
+                width: calc(100% - 70px);
+                margin-left: 70px;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .member-card {
+                width: 280px;
+            }
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <section class="hero" id="hero">
+    <div class="particles" id="particles"></div>
+
+    <section class="hero">
         <div class="hero-content">
+            <img src="resource/logo/logo-blue.png" alt="AIP LOGO" class="hero-logo">
+            <div class="hero-title" id="hero-title"></div>
+            <div class="hero-subtitle" id="hero-subtitle"></div>
         </div>
     </section>
 
-    <section class="hall-of-fame" id="hall-of-fame">
-        <h2 id="hall-of-fame-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#1976d2;"></h2>
-        <div class="tabs" id="tabs">
-        </div>
-        <div id="tab-contents">
-        </div>
+    <section class="hall-of-fame">
+        <h2 class="section-title" id="hall-of-fame-title"></h2>
+        <div class="tabs" id="tabs"></div>
+        <div id="tab-contents"></div>
     </section>
 
-    <section class="gallery" id="gallery">
-        <h2 id="gallery-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#d72660;"></h2>
+    <section class="gallery">
+        <h2 class="section-title" id="gallery-title"></h2>
         <div class="gallery-container">
-            <img class="gallery-photo" id="gallery-photo" alt="公会合影">
-            <div class="gallery-info" id="gallery-info">
+            <div class="gallery-main">
+                <img class="gallery-photo" id="gallery-photo" alt="公会合影">
+                <div class="gallery-info" id="gallery-info"></div>
+                <div class="gallery-controls">
+                    <button class="gallery-btn" id="gallery-prev">&#8592;</button>
+                    <button class="gallery-btn" id="gallery-next">&#8594;</button>
+                </div>
             </div>
-            <div class="gallery-controls">
-                <button class="gallery-btn" id="gallery-prev">&#8592;</button>
-                <button class="gallery-btn" id="gallery-next">&#8594;</button>
-            </div>
+            <div class="gallery-thumbs" id="gallery-thumbs"></div>
         </div>
     </section>
 
-    <section class="honor-wall" id="honor-wall">
-        <h2 id="honor-wall-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#b8860b;"></h2>
-        <div class="honor-timeline" id="honor-timeline">
-        </div>
+    <section class="honor-wall">
+        <h2 class="section-title" id="honor-wall-title"></h2>
+        <div class="honor-timeline" id="honor-timeline"></div>
     </section>
 
-    <section class="activity-records" id="activity-records">
-        <h2 id="activity-records-title" style="text-align:center;font-size:2rem;margin-bottom:24px;color:#7b1fa2;"></h2>
-        <div class="activity-accordion" id="activity-accordion">
-        </div>
+    <section class="activity-records">
+        <h2 class="section-title" id="activity-records-title"></h2>
+        <div class="activity-accordion" id="activity-accordion"></div>
     </section>
 
     <script src="data.js"></script>
@@ -485,7 +645,21 @@
         let data = siteData;
         let currentGalleryIndex = 0;
 
+        function createParticles() {
+            const container = document.getElementById('particles');
+            // 减少粒子数量以提升性能
+            for (let i = 0; i < 25; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 25 + 's';
+                particle.style.animationDuration = (20 + Math.random() * 15) + 's';
+                container.appendChild(particle);
+            }
+        }
+
         function renderPage() {
+            createParticles();
             renderHero();
             renderHallOfFame();
             renderGallery();
@@ -495,12 +669,9 @@
         }
 
         function renderHero() {
-            const heroContent = document.querySelector('.hero-content');
-            heroContent.innerHTML = `
-                <img src="${data.site.hero.logo}" alt="AIP LOGO" class="hero-logo">
-                <div class="hero-title">${data.site.hero.title}</div>
-                <div class="hero-subtitle">${data.site.hero.subtitle}</div>
-            `;
+            document.getElementById('hero-title').textContent = data.site.hero.title;
+            document.getElementById('hero-subtitle').textContent = data.site.hero.subtitle;
+            document.querySelector('.hero-logo').src = data.site.hero.logo;
         }
 
         function renderHallOfFame() {
@@ -522,7 +693,9 @@
                     if (key === 'honors' && member.honors) {
                         return `
                             <div class="member-card">
-                                <img src="${member.img}" class="member-img" alt="${member.name}">
+                                <div class="member-img-container">
+                                    <img src="${member.img}" class="member-img" alt="${member.name}">
+                                </div>
                                 <div class="member-name">${member.name}</div>
                                 <div class="member-join">${member.join}</div>
                                 <ul class="member-honor-list">
@@ -533,7 +706,9 @@
                     } else {
                         return `
                             <div class="member-card">
-                                <img src="${member.img}" class="member-img" alt="${member.name}">
+                                <div class="member-img-container">
+                                    <img src="${member.img}" class="member-img" alt="${member.name}">
+                                </div>
                                 <div class="member-name">${member.name}</div>
                                 <div class="member-join">${member.join}</div>
                                 <div class="member-desc">${member.desc}</div>
@@ -542,13 +717,21 @@
                     }
                 }).join('');
 
-                return `<div class="tab-content ${index === 0 ? 'active' : ''}" id="tab-${key}">${membersHTML}</div>`;
+                return `<div class="tab-content ${index === 0 ? 'active' : ''}" id="tab-${key}">
+                    <div class="members-grid">${membersHTML}</div>
+                </div>`;
             }).join('');
         }
 
         function renderGallery() {
             document.getElementById('gallery-title').textContent = data.gallery.title;
             updateGalleryPhoto();
+            
+            const thumbsContainer = document.getElementById('gallery-thumbs');
+            thumbsContainer.innerHTML = data.gallery.photos.map((photo, index) => `
+                <img src="${photo.src}" class="gallery-thumb ${index === 0 ? 'active' : ''}" 
+                     data-index="${index}" alt="${photo.desc}">
+            `).join('');
         }
 
         function updateGalleryPhoto() {
@@ -558,6 +741,10 @@
                 <div>${photo.time}</div>
                 <div>${photo.desc}</div>
             `;
+            
+            document.querySelectorAll('.gallery-thumb').forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentGalleryIndex);
+            });
         }
 
         function renderHonorWall() {
@@ -601,22 +788,20 @@
 
                     return `
                         <div class="activity-card">
-                            <div class="activity-info">
-                                <div class="activity-title">${activity.title}</div>
-                                <div class="activity-time">${activity.time}</div>
-                                <div class="activity-desc">${activity.desc}</div>
-                                ${top4HTML ? `<ol class="activity-top4">${top4HTML}</ol>` : ''}
-                                ${subTiersHTML}
-                                ${linksHTML}
-                            </div>
+                            <div class="activity-title">${activity.title}</div>
+                            <div class="activity-time">${activity.time}</div>
+                            <div class="activity-desc">${activity.desc}</div>
+                            ${top4HTML ? `<ol class="activity-top4">${top4HTML}</ol>` : ''}
+                            ${subTiersHTML}
+                            ${linksHTML}
                         </div>
                     `;
                 }).join('');
 
                 return `
                     <div class="activity-year">
-                        <div class="activity-year-header" onclick="toggleActivityYear(this)">${yearData.year} ${yearData.expanded ? '▲' : '▼'}</div>
-                        <div class="activity-list" style="display:${yearData.expanded ? 'block' : 'none'};">
+                        <div class="activity-year-header ${yearData.expanded ? 'active' : ''}" onclick="toggleActivityYear(this)">${yearData.year}</div>
+                        <div class="activity-list ${yearData.expanded ? 'show' : ''}">
                             ${activitiesHTML}
                         </div>
                     </div>
@@ -644,14 +829,20 @@
                 currentGalleryIndex = (currentGalleryIndex + 1) % data.gallery.photos.length;
                 updateGalleryPhoto();
             });
+
+            document.getElementById('gallery-thumbs').addEventListener('click', function(e) {
+                if (e.target.classList.contains('gallery-thumb')) {
+                    currentGalleryIndex = parseInt(e.target.getAttribute('data-index'));
+                    updateGalleryPhoto();
+                }
+            });
         }
 
         function toggleActivityYear(header) {
             const list = header.nextElementSibling;
-            const isExpanded = list.style.display === 'block';
-            list.style.display = isExpanded ? 'none' : 'block';
-            const yearText = header.textContent.replace(/[▲▼]/g, '').trim();
-            header.textContent = yearText + ' ' + (isExpanded ? '▼' : '▲');
+            const isExpanded = list.classList.contains('show');
+            list.classList.toggle('show');
+            header.classList.toggle('active');
         }
 
         document.addEventListener('DOMContentLoaded', renderPage);
