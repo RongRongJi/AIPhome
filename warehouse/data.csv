@@ -42,7 +42,7 @@ id,name_cn,name_en,config_cn,config_en,available,renter,time,collateral,donor
 41,直冲熊,Obstagoon,5v特攻0爽朗头目，HP252，攻击248，特防10,"5V Sp. Attack 0 Jolly Alpha, HP 252, Attack 248, Special Defense 10",yes,,,,BOOH
 42,三首恶龙,Hydreigon,5v攻击0内敛，HP38，防御4，特攻252，特防84，速度132,"5V Attack 0 Modest, HP 38, Defense 4, Special Attack 252, Special Defense 84, Speed 132",yes,,,,BOOH
 43,暴鲤龙,Gyarados,5v特攻0爽朗头目，攻击252，速度252,"5V Sp. Attack 0 Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
-44,太阳伊布,Espeon,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
+44,太阳伊布,Espeon,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",no,Rong,,,BOOH
 45,宝石海星,Starmie,5v攻击0胆小头目，特攻252，速度252,"5V Attack 0 Timid Alpha, Special Attack 252, Speed 252",yes,,,,BOOH
 46,月亮伊布,Umbreon,5v攻击0大胆头目，HP252，防御252,"5V Attack 0 Bold Alpha, HP 252, Defense 252",yes,,,,BOOH
 47,班基拉斯,Tyranitar,5v特攻0爽朗头目，攻击252，速度252,"5V Sp. Attack 0 Jolly Alpha, Attack 252, Speed 252",yes,,,,BOOH
